@@ -1,5 +1,13 @@
 # 游戏概述
 
+## 结论（TL;DR）
+
+- **一句话**：Capcom 1993 年的 CPS Q Sound 街机清版动作游戏，384×224 / 约 59.6 Hz、引擎全帧计时；8 关、4 选 1 角色、同屏最多 3 人、1 币 2 命。
+- **复刻基准版本**：世界版 romset `dino`（930201）；盗版与民间改版（`dinot`、`dinore` 等）修改过内容，**不要照搬**。
+- **世界观**：26 世纪，污染后的人类返回地表遇到恐龙，4 名主角对抗捕猎恐龙的黑市商人；关卡即剧情路线，最终 Boss 是 Dr. Simon Fessenden。
+- **关键系统**：续关画面 20 秒倒计时，续关可换角色并自带 4 发火箭筒；难度共 8 档（DIP 开关）；「结算画面加命卡死 + 不死」是原版 bug。
+- **没有官方移植或重制**（卡在通用汽车的 Cadillac 授权），游戏早于同名动画。
+
 > 本页信息主要整理自
 > [RQ87's Cadillacs and Dinosaurs shrine](https://rq87.flyingomelette.com/RQ/CAD/main.html)
 > 的 [info](https://rq87.flyingomelette.com/RQ/CAD/info.html)、

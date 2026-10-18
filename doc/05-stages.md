@@ -1,5 +1,12 @@
 # 关卡
 
+## 结论（TL;DR）
+
+- **8 关流程**：海城 → 沼泽森林 → 死亡沙漠（驾驶）→ 修车厂 → 火焰村 → 矿坑丛林 → 金库 → 生物实验室；Boss 依次 Vice / Butcher / Hogg / Slice / Morgan→Morgue / Tyrog / Slisaur×2 / Fessenden。
+- **必须支持纵向卷轴**：第 7 关有 984×14320 的垂直电梯下降段；**第 3 关 12888 px 全游戏最长**，且原版时限仅 3:00。
+- **刷怪记录是定长 16 字节结构**（含人数标记 0/4/6），可直接照搬为复刻的关卡数据格式；原版**没有隐藏关 / 奖励关**。
+- **可照搬的关卡套路**：分段锁屏清敌、每桶必出道具、脚本化障碍（落石 / 滚桶 / 恐龙腿 / 火焰喷射器）、旧 Boss 换皮复用、可唤醒的中立 T-Rex。
+
 > 来源：RQ87 shrine 各关卡页
 > （[l1](https://rq87.flyingomelette.com/RQ/CAD/l1.html) ~
 > [l8](https://rq87.flyingomelette.com/RQ/CAD/l8.html)）。

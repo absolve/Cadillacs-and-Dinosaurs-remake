@@ -6,6 +6,8 @@
 
 ## 文档索引
 
+每份文档开头都有 **「结论（TL;DR）」** 小节，赶时间可以先只读结论，再按需深入正文。
+
 | 文档 | 内容 |
 | --- | --- |
 | [01-game-overview.md](./01-game-overview.md) | 游戏概述：版本、硬件、剧情、基础规则 |
@@ -41,6 +43,7 @@
 | [`zelurker/raine`](https://github.com/zelurker/raine) | Raine 模拟器的作弊脚本，提供 Boss HP 等内存地址 |
 | [MAME](https://www.mamedev.org/) | 街机基板、ROM 版本与区域差异（`mamedev/mame` 驱动源码） |
 | [GameFAQs: Cadillacs and Dinosaurs FAQ](https://gamefaqs.gamespot.com/arcade/575551-cadillacs-and-dinosaurs/faqs/53882) | 社区整理的攻略与招式说明（**目前无法访问**，见下） |
+| [`bombzj/arcade-sprite-viewer`](https://github.com/bombzj/arcade-sprite-viewer) | 街机精灵 / 背景查看器（CPS1 / NEOGEO 等），支持本作：从 ROM 拼装精灵、动画与整关场景图，**可显示命中盒**，可在线使用（asv.bombzj.com），适合做美术与判定参考 |
 | [The Cutting Room Floor](https://tcrf.net/) | 未使用素材（未采用的开发人员头像、未使用的小恐龙等，**目前无法访问**） |
 
 > **已知的资料缺口**：GameFAQs 的 FAQ 53882 与 TCRF 页面目前都无法抓取

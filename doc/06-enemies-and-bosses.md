@@ -1,5 +1,13 @@
 # 敌人与 Boss
 
+## 结论（TL;DR）
+
+- **敌人 HP（ROM 实值）**：投掷杂兵 12、翼龙 Zeke 50、副 Boss 200（最高难度 500+），再叠加难度加成；逐个敌人的 HP 与攻击伤害仍缺 `[待核对]`。
+- **同屏有槽位预算**：杂兵 1、Bludge 与雷龙腿 2、持刀近战与 Lash T. 3；不做这个限制，同屏敌人会明显多于原版。
+- **恐龙是中立单位**：T-Rex、雷龙腿等应**同时伤害玩家和敌人**；杂兵 AI 普遍笨，别写太聪明。
+- **Boss 复用体系**：Walther = Vice 换色、Slisaur = Slice 变异（数量翻倍）、Fessenden 第 1 形态 = Morgue 同型、Tyrog 2 = 弱化 Tyrog —— 用「同一数据 + 参数」实现，不要各写一套 AI。
+- **已确认**：Boss 倒地后无无敌帧（Slisaur 刻意除外），可无限连击锁定。
+
 > 来源：RQ87 shrine 的
 > [关卡页](https://rq87.flyingomelette.com/RQ/CAD/l.html) 与
 > [未使用素材页](https://rq87.flyingomelette.com/RQ/CAD/unu.html)，
