@@ -18,6 +18,7 @@
 | [06-enemies-and-bosses.md](./06-enemies-and-bosses.md) | 敌人与 Boss 名单及行为 |
 | [07-dev-reference.md](./07-dev-reference.md) | 复刻实现参考：数值取舍与实现要点 |
 | [08-rom-data-tables.md](./08-rom-data-tables.md) | **原版 ROM 数据表**（血量、伤害、弹药、食物回复、掉落表、关卡尺寸、内存地址） |
+| [09-development-plan.md](./09-development-plan.md) | **开发计划**：现阶段只实现第 1 关 —— 里程碑 M0~M6、数据准备清单与占位策略 |
 
 ## 关于数据可靠性的说明
 
