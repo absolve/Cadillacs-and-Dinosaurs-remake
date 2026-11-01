@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_vvlyo"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set084/act00.png" id="2_welj5"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set084/act01.png" id="3_ri4fo"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set084/act02.png" id="4_itxxd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6f7l"]
+atlas = ExtResource("2_welj5")
+region = Rect2(0, 0, 112, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6a6n"]
+atlas = ExtResource("3_ri4fo")
+region = Rect2(0, 0, 128, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bub0"]
+atlas = ExtResource("4_itxxd")
+region = Rect2(0, 0, 128, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1ndx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6f7l")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6a6n")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bub0")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6f7l")
+}],
+"loop": 0,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6a6n")
+}],
+"loop": 0,
+"name": &"act04",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_vvlyo")
+set_index = 84
+category = &"effects"
+rom_addr = "0x718ee"
+sheet_dir = "res://sprite/effects/set084"
+sprite_frames = SubResource("SpriteFrames_t1ndx")
+acts = {
+"act00": {
+"anchor": Vector2(56, 224),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1421]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set084/act00.png",
+"size": Vector2i(112, 224),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(48, 208),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1422]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set084/act01.png",
+"size": Vector2i(128, 208),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(32, 176),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1423]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set084/act02.png",
+"size": Vector2i(128, 176),
+"terminated": true
+},
+"act03": {
+"anchor": Vector2(56, 224),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1421]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set084/act03.png",
+"size": Vector2i(112, 224),
+"terminated": true
+},
+"act04": {
+"anchor": Vector2(48, 208),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1422]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set084/act04.png",
+"size": Vector2i(128, 208),
+"terminated": true
+}
+}

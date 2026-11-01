@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_5hior"]
+[ext_resource type="Texture2D" path="res://sprite/items/set122/act00.png" id="2_vscx5"]
+[ext_resource type="Texture2D" path="res://sprite/items/set122/act01.png" id="3_itlcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqwa2"]
+atlas = ExtResource("2_vscx5")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vy5n"]
+atlas = ExtResource("3_itlcj")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it2ni"]
+atlas = ExtResource("3_itlcj")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd8rr"]
+atlas = ExtResource("3_itlcj")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7xfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqwa2")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqwa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vy5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd8rr")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqwa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vy5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd8rr")
+}],
+"loop": 1,
+"name": &"act02",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_5hior")
+set_index = 122
+category = &"items"
+rom_addr = "0x568bc"
+sheet_dir = "res://sprite/items/set122"
+sprite_frames = SubResource("SpriteFrames_r7xfp")
+acts = {
+"act00": {
+"anchor": Vector2(16, 16),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2792]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set122/act00.png",
+"size": Vector2i(32, 16),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(16, 16),
+"cols": 4,
+"count": 4,
+"frames": Array[int]([2796, 2797, 2798, 2799]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set122/act01.png",
+"size": Vector2i(32, 16),
+"terminated": false
+},
+"act02": {
+"anchor": Vector2(16, 16),
+"cols": 4,
+"count": 4,
+"frames": Array[int]([2792, 2793, 2794, 2795]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set122/act02.png",
+"size": Vector2i(32, 16),
+"terminated": false
+}
+}

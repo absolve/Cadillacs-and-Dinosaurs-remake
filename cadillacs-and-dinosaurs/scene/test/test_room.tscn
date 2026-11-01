@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scene/test/test_room.gd" id="1_room"]
+[ext_resource type="PackedScene" path="res://scene/actor/player/jack.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scene/actor/enemy/enemy.tscn" id="3_enemy"]
+[ext_resource type="Script" path="res://scene/test/object_states_test.gd" id="4_test"]
+
+[node name="TestRoom" type="Node2D"]
+script = ExtResource("1_room")
+
+[node name="Background" type="ColorRect" parent="."]
+visibility_layer = 1
+offset_right = 800.0
+offset_bottom = 224.0
+color = Color(0.09, 0.1, 0.12, 1)
+
+[node name="WalkBand" type="ColorRect" parent="."]
+visibility_layer = 2
+offset_left = 40.0
+offset_top = 120.0
+offset_right = 340.0
+offset_bottom = 200.0
+color = Color(0.16, 0.19, 0.22, 1)
+
+[node name="Actors" type="Node2D" parent="."]
+visibility_layer = 4
+y_sort_enabled = true
+
+[node name="Player" parent="Actors" instance=ExtResource("2_player")]
+position = Vector2(120, 160)
+
+[node name="Enemy" parent="Actors" instance=ExtResource("3_enemy")]
+position = Vector2(300, 160)
+
+[node name="Enemy2" parent="Actors" instance=ExtResource("3_enemy")]
+position = Vector2(338, 172)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 112)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="StatusLabel" type="Label" parent="HUD"]
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 380.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 8
+text = "P1 / 敌人 状态调试"
+
+[node name="AutoTest" type="Node" parent="."]
+script = ExtResource("4_test")

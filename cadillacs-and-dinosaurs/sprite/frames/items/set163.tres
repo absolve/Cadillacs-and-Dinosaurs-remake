@@ -1,0 +1,371 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_22e56"]
+[ext_resource type="Texture2D" path="res://sprite/items/set163/act00.png" id="2_xydyh"]
+[ext_resource type="Texture2D" path="res://sprite/items/set163/act17.png" id="3_nqkks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r00v0"]
+atlas = ExtResource("2_xydyh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfwd6"]
+atlas = ExtResource("3_nqkks")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0487"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act04",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act05",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act06",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act07",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act08",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act09",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act10",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act11",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act12",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act13",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act14",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act15",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}],
+"loop": 0,
+"name": &"act16",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfwd6")
+}],
+"loop": 1,
+"name": &"act17",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_22e56")
+set_index = 163
+category = &"items"
+rom_addr = "0x27cd2"
+sheet_dir = "res://sprite/items/set163"
+sprite_frames = SubResource("SpriteFrames_b0487")
+acts = {
+"act00": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act00.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act01.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act02.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act03": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act03.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act04": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act04.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act05": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act05.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act06": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act06.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act07": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act07.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act08": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act08.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act09": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act09.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act10": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act10.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act11": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act11.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act12": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act12.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act13": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act13.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act14": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act14.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act15": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act15.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act16": {
+"anchor": Vector2(8, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2739]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act16.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act17": {
+"anchor": Vector2(8, 12),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([2739, 2739]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set163/act17.png",
+"size": Vector2i(16, 16),
+"terminated": false
+}
+}

@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_cxrel"]
+[ext_resource type="Texture2D" path="res://sprite/items/set142/act00.png" id="2_nfs3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7j6h"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(0, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfn8r"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(48, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx6lu"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(96, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5ioi"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(144, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2gna"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(192, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dks2x"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(240, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tni22"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(288, 0, 48, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpg0o"]
+atlas = ExtResource("2_nfs3o")
+region = Rect2(336, 0, 48, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjina"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7j6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfn8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx6lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5ioi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2gna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dks2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tni22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpg0o")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_cxrel")
+set_index = 142
+category = &"items"
+rom_addr = "0x5bda6"
+sheet_dir = "res://sprite/items/set142"
+sprite_frames = SubResource("SpriteFrames_xjina")
+acts = {
+"act00": {
+"anchor": Vector2(24, 30),
+"cols": 8,
+"count": 8,
+"frames": Array[int]([2729, 2730, 2731, 2732, 2733, 2734, 2735, 2736]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set142/act00.png",
+"size": Vector2i(48, 33),
+"terminated": false
+}
+}

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_rcefg"]
+[ext_resource type="Texture2D" path="res://sprite/items/set147/act00.png" id="2_qjsoj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afup7"]
+atlas = ExtResource("2_qjsoj")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlya3"]
+atlas = ExtResource("2_qjsoj")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nrdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afup7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlya3")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_rcefg")
+set_index = 147
+category = &"items"
+rom_addr = "0x8216e"
+sheet_dir = "res://sprite/items/set147"
+sprite_frames = SubResource("SpriteFrames_2nrdy")
+acts = {
+"act00": {
+"anchor": Vector2(48, 80),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([3300, 1]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set147/act00.png",
+"size": Vector2i(96, 80),
+"terminated": false
+}
+}

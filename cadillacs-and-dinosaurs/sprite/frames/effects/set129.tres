@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_puoee"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set129/act00.png" id="2_7tlpm"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set129/act01.png" id="3_bfxb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01303"]
+atlas = ExtResource("2_7tlpm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k7do"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tatnh"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(48, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd2l2"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(96, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7eko"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(144, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2poy2"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(192, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chhqh"]
+atlas = ExtResource("3_bfxb3")
+region = Rect2(240, 0, 48, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwrd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01303")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k7do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tatnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd2l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7eko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2poy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chhqh")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_puoee")
+set_index = 129
+category = &"effects"
+rom_addr = "0x6fb1a"
+sheet_dir = "res://sprite/effects/set129"
+sprite_frames = SubResource("SpriteFrames_mwrd8")
+acts = {
+"act00": {
+"anchor": Vector2(8, 8),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2127]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set129/act00.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(16, 32),
+"cols": 6,
+"count": 6,
+"frames": Array[int]([2127, 2094, 2095, 2096, 2097, 3287]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set129/act01.png",
+"size": Vector2i(48, 40),
+"terminated": true
+}
+}

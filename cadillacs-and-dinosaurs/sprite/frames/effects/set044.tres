@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_t0gwf"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set044/act00.png" id="2_vtvuc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d7gp"]
+atlas = ExtResource("2_vtvuc")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4hh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d7gp")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_t0gwf")
+set_index = 44
+category = &"effects"
+rom_addr = "0x9430a"
+sheet_dir = "res://sprite/effects/set044"
+sprite_frames = SubResource("SpriteFrames_w4hh8")
+acts = {
+"act00": {
+"anchor": Vector2(24, 16),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3305]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/effects/set044/act00.png",
+"size": Vector2i(48, 16),
+"terminated": false
+}
+}

@@ -1,0 +1,82 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_56mmh"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set099/act00.png" id="2_vf4hd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0a5s"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebwyt"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(96, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exok7"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(192, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws2pg"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(288, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oduki"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(384, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knrql"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(480, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo0e6"]
+atlas = ExtResource("2_vf4hd")
+region = Rect2(576, 0, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epvny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0a5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebwyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exok7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws2pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oduki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knrql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo0e6")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_56mmh")
+set_index = 99
+category = &"enemies"
+rom_addr = "0x51076"
+sheet_dir = "res://sprite/enemies/set099"
+sprite_frames = SubResource("SpriteFrames_epvny")
+acts = {
+"act00": {
+"anchor": Vector2(40, 36),
+"cols": 7,
+"count": 7,
+"frames": Array[int]([2056, 2056, 2056, 2056, 2056, 2056, 2056]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/enemies/set099/act00.png",
+"size": Vector2i(96, 32),
+"terminated": false
+}
+}

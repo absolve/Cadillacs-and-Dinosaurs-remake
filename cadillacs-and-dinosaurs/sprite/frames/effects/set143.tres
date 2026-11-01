@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_s1ymp"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set143/act00.png" id="2_xsn55"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set143/act01.png" id="3_kq7qh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d6eq"]
+atlas = ExtResource("2_xsn55")
+region = Rect2(0, 0, 48, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1tlr"]
+atlas = ExtResource("2_xsn55")
+region = Rect2(48, 0, 48, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhwya"]
+atlas = ExtResource("2_xsn55")
+region = Rect2(96, 0, 48, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny1xg"]
+atlas = ExtResource("2_xsn55")
+region = Rect2(144, 0, 48, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221tl"]
+atlas = ExtResource("3_kq7qh")
+region = Rect2(0, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6pj7"]
+atlas = ExtResource("3_kq7qh")
+region = Rect2(128, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owqgt"]
+atlas = ExtResource("3_kq7qh")
+region = Rect2(256, 0, 128, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqncx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d6eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1tlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhwya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny1xg")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_221tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6pj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owqgt")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_s1ymp")
+set_index = 143
+category = &"effects"
+rom_addr = "0x5c6f0"
+sheet_dir = "res://sprite/effects/set143"
+sprite_frames = SubResource("SpriteFrames_dqncx")
+acts = {
+"act00": {
+"anchor": Vector2(24, 80),
+"cols": 4,
+"count": 4,
+"frames": Array[int]([160, 2911, 0, 9]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/effects/set143/act00.png",
+"size": Vector2i(48, 82),
+"terminated": false
+},
+"act01": {
+"anchor": Vector2(64, 96),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([0, 272, 466]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/effects/set143/act01.png",
+"size": Vector2i(128, 96),
+"terminated": false
+}
+}

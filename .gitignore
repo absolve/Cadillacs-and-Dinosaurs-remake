@@ -28,3 +28,5 @@ export_presets.cfg
 # Exported binaries: keep the folder, ignore its contents
 build/*
 !build/.gitkeep
+/tools
+/cadillacs-and-dinosaurs/tools

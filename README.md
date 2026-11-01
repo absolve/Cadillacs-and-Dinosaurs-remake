@@ -39,14 +39,37 @@ Cadillacs-and-Dinosaurs-remake/
 | 默认纹理过滤 | 最近邻（Nearest） |
 
 用 Godot 打开 `cadillacs-and-dinosaurs/project.godot` 即可。
-命令行验证工程可正常导入：
+命令行验证工程可正常导入（`<GODOT>` 为本机的 `Godot_v4.7.2-stable_win64_console.exe`）：
 
 ```powershell
-& "F:\Godot_v4.7.2-stable_win64_console.exe" --headless --path .\cadillacs-and-dinosaurs --import
+& "<GODOT>" --headless --path .\cadillacs-and-dinosaurs --import
 ```
 
-> 工程尚未设置主场景（`application/run/main_scene`），完成首个场景后
-> 在「项目设置 → 应用程序 → 运行 → 主场景」中指定即可。
+### 美术素材流水线
+
+ROM 解码出的精灵已按分类导入 `cadillacs-and-dinosaurs/sprite/`，
+`.tres` 由工程内脚本生成（细节与限制见
+[sprite/README.md](cadillacs-and-dinosaurs/sprite/README.md)）：
+
+```bash
+python tools/import_dino_sprites.py                  # 导出包 → sprite/ 分类 PNG + manifest.json
+& "<GODOT>" --headless --path .\cadillacs-and-dinosaurs `
+    --script res://tools/build_sprite_frames.gd      # manifest → sprite/frames/**.tres
+& "<GODOT>" --headless --path .\cadillacs-and-dinosaurs `
+    --script res://tools/verify_sprite_frames.gd     # 回读 .tres 与 manifest 对账
+```
+
+> 主场景当前指向**测试房** `res://scene/test/test_room.tscn`（灰盒街道 + 玩家 / 敌人沙盒）。
+> 无头跑一遍状态与功能回归断言：
+>
+> ```powershell
+> & "<GODOT>" --headless --path .\cadillacs-and-dinosaurs res://scene/test/test_room.tscn
+> ```
+>
+> 74 项断言（动画组与 `act_map` / 招式两段式动画 / 移动 / 纵深 / 边界 / 跳跃 / 飞踢 /
+> 三段连击 / hit-confirm / 一次挥击只结算一次 / 力量缩放 / 击倒→起身→眩晕 /
+> 60 帧免疫 / 敌人 AI / 高度轴 / 死亡）
+> 全绿才算通过；退出码非 0 即有断言失败。图形界面下加 `-- --auto` 同样会跑断言。
 
 ## 操作映射
 

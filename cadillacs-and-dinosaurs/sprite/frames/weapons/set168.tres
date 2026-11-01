@@ -1,0 +1,163 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_rnhj3"]
+[ext_resource type="Texture2D" path="res://sprite/weapons/set168/act00.png" id="2_1mna3"]
+[ext_resource type="Texture2D" path="res://sprite/weapons/set168/act05.png" id="3_r24w1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys6ma"]
+atlas = ExtResource("2_1mna3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1wfw"]
+atlas = ExtResource("2_1mna3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyn0t"]
+atlas = ExtResource("3_r24w1")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypr6c"]
+atlas = ExtResource("3_r24w1")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_145pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1wfw")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1wfw")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1wfw")
+}],
+"loop": 1,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1wfw")
+}],
+"loop": 1,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6ma")
+}],
+"loop": 0,
+"name": &"act04",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyn0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypr6c")
+}],
+"loop": 1,
+"name": &"act05",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_rnhj3")
+set_index = 168
+category = &"weapons"
+rom_addr = "0x28904"
+sheet_dir = "res://sprite/weapons/set168"
+sprite_frames = SubResource("SpriteFrames_145pc")
+acts = {
+"act00": {
+"anchor": Vector2(1, 8),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([3509, 3510]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act00.png",
+"size": Vector2i(16, 16),
+"terminated": false
+},
+"act01": {
+"anchor": Vector2(8, 16),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([2121, 2122]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act01.png",
+"size": Vector2i(16, 16),
+"terminated": false
+},
+"act02": {
+"anchor": Vector2(0, 8),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([2123, 2124]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act02.png",
+"size": Vector2i(16, 16),
+"terminated": false
+},
+"act03": {
+"anchor": Vector2(8, 16),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([2125, 2126]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act03.png",
+"size": Vector2i(16, 16),
+"terminated": false
+},
+"act04": {
+"anchor": Vector2(8, 8),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2127]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act04.png",
+"size": Vector2i(16, 16),
+"terminated": true
+},
+"act05": {
+"anchor": Vector2(3, 8),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([3510, 3511]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set168/act05.png",
+"size": Vector2i(32, 16),
+"terminated": false
+}
+}

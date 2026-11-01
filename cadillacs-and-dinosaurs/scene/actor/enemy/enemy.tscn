@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://script/core/enemy.gd" id="1_enemy"]
+[ext_resource type="Resource" path="res://script/data/ferris_stats.tres" id="2_stats"]
+[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="3_setcls"]
+[ext_resource type="Resource" path="res://sprite/frames/enemies/set024.tres" id="4_g0"]
+[ext_resource type="Script" path="res://script/core/state_machine.gd" id="4_sm"]
+[ext_resource type="Script" path="res://script/state/enemy/approach_state.gd" id="5_approach"]
+[ext_resource type="Script" path="res://script/state/enemy/enemy_attack_state.gd" id="6_attack"]
+[ext_resource type="Script" path="res://script/state/shared/hurt_state.gd" id="7_hurt"]
+[ext_resource type="Script" path="res://script/state/shared/down_state.gd" id="8_down"]
+[ext_resource type="Script" path="res://script/state/shared/rise_state.gd" id="9_rise"]
+[ext_resource type="Script" path="res://script/state/enemy/stunned_state.gd" id="10_stunned"]
+
+[sub_resource type="RectangleShape2D" id="hit_shape"]
+size = Vector2(24, 36)
+
+[sub_resource type="RectangleShape2D" id="hurt_shape"]
+size = Vector2(24, 66)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 32
+script = ExtResource("1_enemy")
+side = 1
+anim_groups = Array[ExtResource("3_setcls")]([ExtResource("4_g0")])
+enemy_stats = ExtResource("2_stats")
+act_map = {
+"attack1": "g0/act04",
+"attack2": "g0/act07",
+"attack3": "g0/act05",
+"down": "g0/act14",
+"die": "g0/act15",
+"fall": "g0/act01",
+"hurt": "g0/act11",
+"idle": "g0/act02",
+"jump": "g0/act01",
+"kick": "g0/act05",
+"rise": "g0/act13",
+"run": "g0/act01",
+"stunned": "g0/act10",
+"walk": "g0/act01"
+}
+
+[node name="Body" type="Node2D" parent="."]
+visibility_layer = 4
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Body"]
+centered = false
+
+[node name="Hitbox" type="Area2D" parent="Body"]
+collision_layer = 8
+collision_mask = 1
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Body/Hitbox"]
+position = Vector2(20, -38)
+shape = SubResource("hit_shape")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="Body"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Body/Hurtbox"]
+position = Vector2(0, -33)
+shape = SubResource("hurt_shape")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_sm")
+initial_state = NodePath("Approach")
+
+[node name="Approach" type="Node" parent="StateMachine"]
+script = ExtResource("5_approach")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("6_attack")
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("7_hurt")
+
+[node name="Down" type="Node" parent="StateMachine"]
+script = ExtResource("8_down")
+
+[node name="Rise" type="Node" parent="StateMachine"]
+script = ExtResource("9_rise")
+
+[node name="Stunned" type="Node" parent="StateMachine"]
+script = ExtResource("10_stunned")

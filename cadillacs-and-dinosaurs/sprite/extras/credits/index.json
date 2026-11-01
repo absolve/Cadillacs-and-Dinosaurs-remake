@@ -1,0 +1,24 @@
+{
+ "group": "credits",
+ "palettePage": "0-0",
+ "frames": [
+  {
+   "frame": 3377,
+   "file": "f3377.png",
+   "w": 144,
+   "h": 32
+  },
+  {
+   "frame": 3378,
+   "file": "f3378.png",
+   "w": 176,
+   "h": 16
+  },
+  {
+   "frame": 3379,
+   "file": "f3379.png",
+   "w": 96,
+   "h": 32
+  }
+ ]
+}

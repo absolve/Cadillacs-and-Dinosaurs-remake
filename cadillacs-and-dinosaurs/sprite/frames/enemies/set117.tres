@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_348x2"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set117/act00.png" id="2_xfopa"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set117/act01.png" id="3_e3jn7"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set117/act02.png" id="4_8bpil"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqq8t"]
+atlas = ExtResource("2_xfopa")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntv8v"]
+atlas = ExtResource("3_e3jn7")
+region = Rect2(0, 0, 127, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1a4s"]
+atlas = ExtResource("3_e3jn7")
+region = Rect2(127, 0, 127, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuspg"]
+atlas = ExtResource("3_e3jn7")
+region = Rect2(254, 0, 127, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1bg5"]
+atlas = ExtResource("4_8bpil")
+region = Rect2(0, 0, 80, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubtue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqq8t")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntv8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1a4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuspg")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1bg5")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_348x2")
+set_index = 117
+category = &"enemies"
+rom_addr = "0x648aa"
+sheet_dir = "res://sprite/enemies/set117"
+sprite_frames = SubResource("SpriteFrames_ubtue")
+acts = {
+"act00": {
+"anchor": Vector2(66, 13),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2541]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/enemies/set117/act00.png",
+"size": Vector2i(80, 64),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(95, 20),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([2542, 2547, 2548]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/enemies/set117/act01.png",
+"size": Vector2i(127, 57),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(18, 25),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3251]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/enemies/set117/act02.png",
+"size": Vector2i(80, 45),
+"terminated": true
+}
+}

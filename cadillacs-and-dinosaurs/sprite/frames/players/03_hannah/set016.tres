@@ -1,0 +1,240 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_fatl5"]
+[ext_resource type="Texture2D" path="res://sprite/players/03_hannah/set016/act00.png" id="2_c83pg"]
+[ext_resource type="Texture2D" path="res://sprite/players/03_hannah/set016/act01.png" id="3_ty15o"]
+[ext_resource type="Texture2D" path="res://sprite/players/03_hannah/set016/act02.png" id="4_36uw5"]
+[ext_resource type="Texture2D" path="res://sprite/players/03_hannah/set016/act03.png" id="5_cb8ay"]
+[ext_resource type="Texture2D" path="res://sprite/players/03_hannah/set016/act08.png" id="6_1f3ho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybgxv"]
+atlas = ExtResource("2_c83pg")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rax1r"]
+atlas = ExtResource("3_ty15o")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67kma"]
+atlas = ExtResource("4_36uw5")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwq1p"]
+atlas = ExtResource("4_36uw5")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm7tr"]
+atlas = ExtResource("4_36uw5")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyoka"]
+atlas = ExtResource("5_cb8ay")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3elw"]
+atlas = ExtResource("5_cb8ay")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmebv"]
+atlas = ExtResource("6_1f3ho")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltnyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgxv")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rax1r")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67kma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm7tr")
+}],
+"loop": 1,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3elw")
+}],
+"loop": 1,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgxv")
+}],
+"loop": 0,
+"name": &"act04",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgxv")
+}],
+"loop": 0,
+"name": &"act05",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3elw")
+}],
+"loop": 1,
+"name": &"act06",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgxv")
+}],
+"loop": 0,
+"name": &"act07",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmebv")
+}],
+"loop": 0,
+"name": &"act08",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_fatl5")
+set_index = 16
+category = &"players"
+group = "hannah"
+rom_addr = "0xa1622"
+sheet_dir = "res://sprite/players/03_hannah/set016"
+sprite_frames = SubResource("SpriteFrames_ltnyu")
+acts = {
+"act00": {
+"anchor": Vector2(24, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1484]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act00.png",
+"size": Vector2i(64, 80),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(24, 80),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([1507, 1508]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act01.png",
+"size": Vector2i(64, 80),
+"terminated": false
+},
+"act02": {
+"anchor": Vector2(72, 64),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([1488, 1489, 1490]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act02.png",
+"size": Vector2i(128, 64),
+"terminated": false
+},
+"act03": {
+"anchor": Vector2(40, 80),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([1509, 1510]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act03.png",
+"size": Vector2i(80, 80),
+"terminated": false
+},
+"act04": {
+"anchor": Vector2(32, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1505]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act04.png",
+"size": Vector2i(64, 80),
+"terminated": true
+},
+"act05": {
+"anchor": Vector2(32, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1505]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act05.png",
+"size": Vector2i(64, 80),
+"terminated": true
+},
+"act06": {
+"anchor": Vector2(32, 80),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([1484, 1483]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act06.png",
+"size": Vector2i(80, 80),
+"terminated": false
+},
+"act07": {
+"anchor": Vector2(24, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1484]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act07.png",
+"size": Vector2i(64, 80),
+"terminated": true
+},
+"act08": {
+"anchor": Vector2(64, 58),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3188]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/03_hannah/set016/act08.png",
+"size": Vector2i(96, 64),
+"terminated": true
+}
+}

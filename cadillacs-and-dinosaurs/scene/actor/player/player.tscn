@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://booemc316ggt6"]
+
+[ext_resource type="Script" uid="uid://ns1km6lu3avg" path="res://script/core/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://dnn5virhgrf0" path="res://script/core/state_machine.gd" id="4_sm"]
+[ext_resource type="Script" uid="uid://krk6756f8gl6" path="res://script/state/player/idle_state.gd" id="5_idle"]
+[ext_resource type="Script" uid="uid://b472hoal4flni" path="res://script/state/player/walk_state.gd" id="6_walk"]
+[ext_resource type="Script" uid="uid://dlpdvc07wn2qa" path="res://script/state/player/attack_state.gd" id="7_attack"]
+[ext_resource type="Script" uid="uid://cjyk72sx7g1n7" path="res://script/state/player/jump_state.gd" id="8_jump"]
+[ext_resource type="Script" uid="uid://p8ey6dl8ubek" path="res://script/state/shared/hurt_state.gd" id="9_hurt"]
+[ext_resource type="Script" uid="uid://cakdt88ue8p8f" path="res://script/state/shared/down_state.gd" id="10_down"]
+[ext_resource type="Script" uid="uid://3tmx4uleh2y6" path="res://script/state/shared/rise_state.gd" id="11_rise"]
+
+[sub_resource type="RectangleShape2D" id="hit_shape"]
+size = Vector2(26, 40)
+
+[sub_resource type="RectangleShape2D" id="hurt_shape"]
+size = Vector2(24, 72)
+
+[node name="Player" type="CharacterBody2D" unique_id=1792507088]
+collision_mask = 32
+script = ExtResource("1_player")
+side = 0
+act_map = {
+"attack1": "g0/act03",
+"attack2": "g0/act06",
+"attack3": "g1/act12",
+"down": "g0/act07",
+"die": "g0/act12",
+"fall": "g1/act02",
+"grab": "g5/act12",
+"hurt": "g0/act13",
+"idle": "g0/act00",
+"jump": "g1/act00",
+"kick": "g1/act08",
+"rise": "g0/act07",
+"run": "g0/act01",
+"stunned": "g0/act13",
+"walk": "g0/act01"
+}
+
+[node name="Body" type="Node2D" parent="." unique_id=2024753829]
+visibility_layer = 4
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Body" unique_id=1400919236]
+centered = false
+
+[node name="Hitbox" type="Area2D" parent="Body" unique_id=1665221996]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="Shape" type="CollisionShape2D" parent="Body/Hitbox" unique_id=1929785917]
+position = Vector2(23, -40)
+shape = SubResource("hit_shape")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="Body" unique_id=1144248040]
+collision_mask = 0
+monitoring = false
+
+[node name="Shape" type="CollisionShape2D" parent="Body/Hurtbox" unique_id=1537265388]
+position = Vector2(0, -36)
+shape = SubResource("hurt_shape")
+
+[node name="StateMachine" type="Node" parent="." unique_id=464250158]
+script = ExtResource("4_sm")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1230054777]
+script = ExtResource("5_idle")
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=661848999]
+script = ExtResource("6_walk")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=303246971]
+script = ExtResource("7_attack")
+
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1307239571]
+script = ExtResource("8_jump")
+
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=710549487]
+script = ExtResource("9_hurt")
+
+[node name="Down" type="Node" parent="StateMachine" unique_id=565420983]
+script = ExtResource("10_down")
+
+[node name="Rise" type="Node" parent="StateMachine" unique_id=360288554]
+script = ExtResource("11_rise")

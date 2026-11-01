@@ -1,0 +1,273 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_e7glm"]
+[ext_resource type="Texture2D" path="res://sprite/items/set146/act00.png" id="2_dlxdx"]
+[ext_resource type="Texture2D" path="res://sprite/items/set146/act01.png" id="3_5672v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rago1"]
+atlas = ExtResource("2_dlxdx")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86yw1"]
+atlas = ExtResource("3_5672v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cem1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rago1")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act04",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act05",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act06",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act07",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act08",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act09",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act10",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act11",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yw1")
+}],
+"loop": 0,
+"name": &"act12",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_e7glm")
+set_index = 146
+category = &"items"
+rom_addr = "0x5f128"
+sheet_dir = "res://sprite/items/set146"
+sprite_frames = SubResource("SpriteFrames_cem1v")
+acts = {
+"act00": {
+"anchor": Vector2(26, 10),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1690]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act00.png",
+"size": Vector2i(32, 16),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(12, 24),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1694]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act01.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(12, 24),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1694]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act02.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act03": {
+"anchor": Vector2(12, 24),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1694]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act03.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act04": {
+"anchor": Vector2(12, 24),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1694]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act04.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act05": {
+"anchor": Vector2(24, 14),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3055]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act05.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act06": {
+"anchor": Vector2(25, 22),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1691]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act06.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act07": {
+"anchor": Vector2(21, 11),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3054]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act07.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act08": {
+"anchor": Vector2(8, 11),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3050]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act08.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act09": {
+"anchor": Vector2(10, 22),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1695]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act09.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act10": {
+"anchor": Vector2(25, 22),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1691]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act10.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act11": {
+"anchor": Vector2(25, 22),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1691]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act11.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act12": {
+"anchor": Vector2(8, 11),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([3050]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set146/act12.png",
+"size": Vector2i(32, 32),
+"terminated": true
+}
+}

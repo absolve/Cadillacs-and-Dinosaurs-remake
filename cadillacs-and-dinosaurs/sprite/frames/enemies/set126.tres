@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_hfq3n"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set126/act00.png" id="2_gcsqc"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set126/act01.png" id="3_gk6r4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydwia"]
+atlas = ExtResource("2_gcsqc")
+region = Rect2(0, 0, 112, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eej5b"]
+atlas = ExtResource("3_gk6r4")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtqy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydwia")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eej5b")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_hfq3n")
+set_index = 126
+category = &"enemies"
+rom_addr = "0x5727a"
+sheet_dir = "res://sprite/enemies/set126"
+sprite_frames = SubResource("SpriteFrames_xtqy7")
+acts = {
+"act00": {
+"anchor": Vector2(64, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2151]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/enemies/set126/act00.png",
+"size": Vector2i(112, 80),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(16, 64),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2152]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/enemies/set126/act01.png",
+"size": Vector2i(96, 96),
+"terminated": true
+}
+}

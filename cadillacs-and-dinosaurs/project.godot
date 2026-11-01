@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Cadillacs and Dinosaurs"
 config/description="使用 Godot 4 重制的 Capcom 街机清版动作游戏《恐龙快打》(Cadillacs and Dinosaurs)。"
+run/main_scene="res://scene/test/test_room.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

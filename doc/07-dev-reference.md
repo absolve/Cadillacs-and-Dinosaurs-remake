@@ -2,11 +2,12 @@
 
 ## 结论（TL;DR）
 
-- **大部分核心数值已有 ROM 实值，直接采用**（角色 HP 100、连击伤害 Jack 68 / Hannah 67 / Mustapha 65 / Mess 78、必杀伤害 20/20/20/23）；只有动作帧数、移速 / 跳高 / 攻击距离、敌人伤害、输入窗口、宝物分值还需实测。
+- **大部分核心数值已有 ROM 实值，直接采用**（角色 HP 100、连击伤害 Jack 68 / Hannah 67 / Mustapha 65 / Mess 78、必杀伤害 20/20/20/23）；**命中/伤害表已从 ROM 提取**（敌人攻击表 `0xA2EA4`、玩家 4 角色基础表、力量倍率，见 [10-damage-and-hit-data.md](./10-damage-and-hit-data.md)）；只剩动作帧数、判定盒、移速 / 跳高 / 攻击距离、输入窗口、宝物分值还需实测。
 - **四个最容易漏的机制**：力量每次被击中重掷（**残血越容易出高值** 36/42/48，最高难度可到 64；伤害 × 力量/32，最高翻倍）；敌人倒地 60 帧眩晕免疫；Boss 倒地无无敌（设计选择）；必杀是两段伤害（10 + 4）。
 - **Godot 要点**：Y 排序基准取脚底；Hitbox + 自增 `hit_id` 防同一次挥击重复结算；数值全部 `Resource` 化；掉落表 32 分母直接取模；换色用调色板 `ShaderMaterial`。
 - **玩家跑不出地图 = 四层夹取**：摄像机被关卡尺寸夹取 → 玩家 X 夹在视野矩形内 → Y 夹在该区域的**可行走带**（第 1 关 A 147/100、B 79/16、C 63/16）→ `lock` 段锁屏时视野右缘即是墙。建议每个区域一个 `AreaData` 资源 + 统一的 `clamp_to_area()`，玩家与敌人共用（见 [05 §边界](./05-stages.md#玩家为什么跑不出地图边界与锁屏机制)）。
 - **计时**：原版 59.6 Hz 全帧计时，直接用 Godot 60 Hz 物理帧，1 帧 = 1 物理帧。
+- **美术素材已入库**：ROM 全量精灵按分类导入 `res://sprite`（187 动画集 / 2335 段 / 12460 帧 + 44 张关卡背景），一段一张表、锚点在脚底、集号 = `0xB7472` 动画集号；切片、换色与限制见 [§四 精灵素材包](#精灵素材包ressprite)，逐段元数据在 `res://sprite/manifest.json`。
 - **实现顺序**：先 Jack 单人跑通移动 / 连击 / 受击 / 倒地，**尽早加力量系统**，多人、Boss、全局流程放最后。
 
 > 本页给出**复刻时的数值取舍与实现要点**。
@@ -174,6 +175,37 @@
   而不是写在状态机里判断类型。
 - `DRIVE` 状态专供第 3、4 关的 Cadillac 使用（切换操作目标为载具）。
 
+#### 已落地实现（2026-11-01）
+
+分层照搬作者早前《快打旋风》复刻工程 `E:\MightyFinalFightClone\MightyFinalFight`
+的「通用基类 + 状态节点子树」做法，框架层不含任何角色专属逻辑：
+
+| 文件 | 职责 |
+| --- | --- |
+| `script/core/fight_object.gd` | `FightObject`（CharacterBody2D）：HP / 力量 / 朝向 / 伪 Z 轴跳跃 / 判定盒结算 / 可行走带夹取 / **按 ROM 动画组挂多套动画集**（`anim_groups`，动画引用 `"gN/actMM"`） |
+| `script/core/state_machine.gd` | `StateMachine`：按节点名切换状态，**进入即清零帧计数**，每物理帧分发 |
+| `script/core/state.gd` | `FightState`：`enter / exit / physics_update` 三段回调，计时用帧不用动画信号 |
+| `script/core/player.gd` | `Player`：`p%d_` 前缀输入 + 12 帧缓冲 + 被击中重掷力量 |
+| `script/core/enemy.gd` | `Enemy`：目标选择（最近存活玩家）、攻击冷却、`primary_attack()` 兜底 |
+| `script/state/shared/` | `HurtState / DownState / RiseState`（玩家与敌人共用，起身结束按阵营分流） |
+| `script/state/player/` | `PlayerState` 基类 + `Idle / Walk / Attack / Jump` |
+| `script/state/enemy/` | `EnemyState` 基类 + `Approach / Attack / Stunned` |
+| `script/data/` | `MoveData`（帧数 / 伤害 / 判定盒 + **起手段 `start_anim` / 命中段 `hit_anim`**）/ `CharacterStats` / `EnemyStats` / `PowerTable` + `jack / ferris / blade` 三份 `.tres` |
+| `scene/actor/` | `player/player.tscn`（**通用玩家**：状态机 + 判定盒 + 四人共用的 `act_map` 槽位，值写成 `"gN/actMM"`）、`player/jack.tscn` 与 `player/hannah.tscn`（只覆盖 `character_stats` + `anim_groups`＝该角色基址起 6 个集）、`enemy/enemy.tscn`（`set024` 单组） |
+| `scene/test/` | `test_room.tscn` 沙盒 + `object_states_test.gd` 无头断言（74 项） |
+
+三条实现要点：
+
+1. **计时全部走物理帧**（`frames_in_state`），不依赖 `animation_finished`：
+   动画只是表现，判定窗口由 `MoveData.startup / active / recovery` 决定。
+   招式↔动画的对应已按运行时实测闭合（[10 §8.11](./10-damage-and-hit-data.md)），
+   `act_map` 与 `start_anim / hit_anim` 直接引用「组 + 段」。
+2. **判定盒按帧开关 + 轮询重叠**（不是 `area_entered` 信号）：
+   启用形状要延后一帧才生效，所以 `startup - 1` 帧开、`active` 帧内轮询结算，
+   配合 `hit_id` 自增与命中表实现「一次挥击只结算一次」。
+3. **无敌与眩晕免疫是两个计数器**：`invincible_left` 不吃伤害（起身、必杀后），
+   `knockdown_immune_left` 仍吃伤害但不再被击倒（原版击倒后 60 帧）。
+
 ### 数据表
 
 建议把所有数值放进 Godot `Resource`（或 CSV / JSON），不要硬编码：
@@ -213,6 +245,33 @@ res://script/data/stage_data.gd           # 每关的时间、敌人波次、掉
 （杂兵 1、Bludge 与雷龙腿 2、持刀近战与 Lash T. 3）。
 不做这个限制会导致同屏敌人远多于原版。详见
 [06-enemies-and-bosses.md](./06-enemies-and-bosses.md#生成槽位预算)。
+
+### 精灵素材包（`res://sprite`）
+
+ROM 解码出的美术素材已经**分类导入工程**（187 动画集 / 2335 段 / 12460 帧，约 21 MB），
+目录、切片公式、锚点规则与限制都写在
+[`cadillacs-and-dinosaurs/sprite/README.md`](../cadillacs-and-dinosaurs/sprite/README.md)，
+逐集逐段的元数据在 `res://sprite/manifest.json`。要点：
+
+| 事项 | 结论 |
+| --- | --- |
+| 组织粒度 | **一段动画一张表**（`<分类>/setNNN/actNN.png`），等宽高、无间隔、每行 ≤8 帧 |
+| 引擎侧取用 | `res://sprite/frames/<分类>/<角色组>/setNNN.tres` = `DinoAnimSet`（内含 `SpriteFrames`，动画名 `actNN`，`acts` 带锚点/ROM 帧号）。按**动画组号**拖进角色的 `anim_groups`（下标 = 组号），**运行时不重建** |
+| 生成 / 校验 | `--script res://tools/build_sprite_frames.gd`（`--fps=` / `--only=` / `--dry`）+ `--script res://tools/verify_sprite_frames.gd` 回读对账；当前 187 资源 / 2335 段 / 12460 帧槽，0 错误 |
+| 集号语义 | `setNNN` = ROM `0xB7472` 动画集下标，与 [10 §8.2](./10-damage-and-hit-data.md) 的表指针逐条核对**一致（185/185）** |
+| 锚点 | `anchor = [-bbox.x, -bbox.y]`（脚底），绘制用 `centered=false` + `offset=-anchor` |
+| 朝向 | 素材按 ROM 原始朝向导出（不含镜像），`flip_h` 由 `+0x24 朝向`（0=左/1=右）决定，基准面用 `preview.png` 核对 |
+| 换色 | 全部按色盘页 `0-0` 渲染，敌人换色用 `ShaderMaterial`，参照 `enemies/setNNN/palette.png`（91 张，带关卡-场景标签） |
+| 背景 | `backgrounds/` 是整关滚动层（每屏 256×256，layer2/layer3 分开），不是 384×224 镜头画面 |
+| 重生成 | 素材：`python tools/import_dino_sprites.py`（会清空重建分类目录，勿手工往里塞文件）；`.tres`：见上一行 |
+
+> **段号就是动画 ID**：`actNN` 的 NN 与 ROM 传给 `0x120E/0x13A0` 的 `D0` 同一个下标
+> （[10 §8.8](./10-damage-and-hit-data.md)），所以「某招用哪段动画」可以直接写进数据表。
+> 两个写法约定要分清：`actNN` 用**十进制**、ROM 日志里的 `D0` 是**十六进制**
+> （`D0=0x0d` ↔ `act13`）；玩家的一组动画 = `基础集 + 组号`（Jack `set000/001/003/005`、
+> Hannah `set012/013/015/017`，见 [10 §8.11](./10-damage-and-hit-data.md)）。
+> 玩家的 6 个动画组由 `0x163E` 组表按 `A6+0x03` 选择（组0=基础集，组1 承载攻击类段）；
+> 每帧停留帧数是运行时字段 `A6+0x2F` 的倒计时，不在帧记录里。
 
 ## 五、原版机制实现清单（容易漏）
 

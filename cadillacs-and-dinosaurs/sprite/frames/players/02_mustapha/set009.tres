@@ -1,0 +1,190 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_gdpif"]
+[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act00.png" id="2_en7qv"]
+[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act01.png" id="3_64051"]
+[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act02.png" id="4_3cjse"]
+[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act03.png" id="5_vclua"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj0ri"]
+atlas = ExtResource("2_en7qv")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu1dj"]
+atlas = ExtResource("3_64051")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxeth"]
+atlas = ExtResource("3_64051")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmaup"]
+atlas = ExtResource("3_64051")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41d4h"]
+atlas = ExtResource("4_3cjse")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oveys"]
+atlas = ExtResource("4_3cjse")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwtd7"]
+atlas = ExtResource("4_3cjse")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra1ha"]
+atlas = ExtResource("5_vclua")
+region = Rect2(0, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2x4d"]
+atlas = ExtResource("5_vclua")
+region = Rect2(95, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8wek"]
+atlas = ExtResource("5_vclua")
+region = Rect2(190, 0, 95, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0swiv"]
+atlas = ExtResource("5_vclua")
+region = Rect2(285, 0, 95, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gx5l6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj0ri")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu1dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxeth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmaup")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41d4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oveys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwtd7")
+}],
+"loop": 1,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra1ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2x4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8wek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0swiv")
+}],
+"loop": 1,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra1ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2x4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8wek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0swiv")
+}],
+"loop": 1,
+"name": &"act04",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_gdpif")
+set_index = 9
+category = &"players"
+group = "mustapha"
+rom_addr = "0xa04fe"
+sheet_dir = "res://sprite/players/02_mustapha/set009"
+sprite_frames = SubResource("SpriteFrames_gx5l6")
+acts = {
+"act00": {
+"anchor": Vector2(40, 80),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([249]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/02_mustapha/set009/act00.png",
+"size": Vector2i(64, 80),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(56, 80),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([250, 251, 250]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/02_mustapha/set009/act01.png",
+"size": Vector2i(80, 80),
+"terminated": false
+},
+"act02": {
+"anchor": Vector2(40, 80),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([252, 252, 252]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/02_mustapha/set009/act02.png",
+"size": Vector2i(48, 80),
+"terminated": false
+},
+"act03": {
+"anchor": Vector2(56, 80),
+"cols": 4,
+"count": 4,
+"frames": Array[int]([253, 254, 255, 255]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/02_mustapha/set009/act03.png",
+"size": Vector2i(95, 80),
+"terminated": false
+},
+"act04": {
+"anchor": Vector2(56, 80),
+"cols": 4,
+"count": 4,
+"frames": Array[int]([253, 254, 255, 255]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/02_mustapha/set009/act04.png",
+"size": Vector2i(95, 80),
+"terminated": false
+}
+}

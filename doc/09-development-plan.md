@@ -35,21 +35,30 @@
 
 ### M0 工程骨架
 
-- [ ] Godot 4 工程结构落地（目录见下文「目录结构」），空场景可运行
+- [x] Godot 4 工程结构落地（目录见下文「目录结构」），空场景可运行
+	  —— 基类 `script/core/`、状态 `script/state/`、场景 `scene/actor/`，测试房 `scene/test/test_room.tscn`（已设为主场景）
 - [ ] 输入映射：`p1_*` 前缀全套（攻击 / 跳跃 / 八向 / 双击奔跑判定），`InputRouter` 单例抽象「第 N 位玩家」
-- [ ] 数据表 Resource 骨架：`character_stats` / `move_data` / `enemy_stats` / `weapon_data` / `stage_data`（字段清单见 [07 §数据表](./07-dev-reference.md#数据表)）
+	  —— 八向 / 攻击 / 跳跃 + 12 帧输入缓冲已通（`Player` 按 `p%d_` 前缀取键）；**双击奔跑与 `InputRouter` 单例未做**
+- [x] 数据表 Resource 骨架：`character_stats` / `move_data` / `enemy_stats`（字段清单见 [07 §数据表](./07-dev-reference.md#数据表)）
+	  —— 已落 `move_data` / `character_stats` / `enemy_stats` / `power_table` + `jack` / `ferris` / `blade` 三份数值；`weapon_data` / `stage_data` 待 M5
 - [ ] Y 排序测试场景（基准点 = 脚底）、`Camera2D` 跟随最前玩家 + 关卡边界夹取 + 段落锁屏原型
+	  —— Y 排序（脚底 = 节点原点，锚点取自 `DinoAnimSet`）、摄像机跟随最前玩家、可行走带夹取已通；**段落锁屏待 M5**
 - [ ] `AreaData` 资源（`size` / `walk_band(y_min,y_max)` / `vertical_scroll`）+ 统一的 `clamp_to_area()`：玩家 X 夹在视野矩形内、Y 夹在可行走带内（四层边界机制见 [05 §玩家为什么跑不出地图](./05-stages.md#玩家为什么跑不出地图边界与锁屏机制)）
-- [ ] 调试用命中盒显示开关（对应原版 DIP B6 + B8）
+- [x] 调试用命中盒显示开关（对应原版 DIP B6 + B8）
+	  —— 直接用 Godot 的 `Area2D.shape_draw_mode = Always`，在编辑器里逐个 Hitbox / Hurtbox 打开
 
 **验收**：Jack 在灰色测试房间里八向移动，遮挡正确，摄像机锁屏推进。
 
 ### M1 核心战斗（打木桩）
 
-- [ ] 状态机：`IDLE / WALK / ATTACK / HIT / DOWN / RISE`（完整清单见 [07 §状态机](./07-dev-reference.md#状态机)）
-- [ ] 三段连击（可取消衔接）、受击硬直、倒地 / 起身（起身无敌）
-- [ ] Hitbox + 自增 `hit_id`（同一次挥击对同一目标只结算一次）
-- [ ] 敌人被击倒后 **60 帧眩晕免疫**
+- [x] 状态机：`IDLE / WALK / ATTACK / HIT / DOWN / RISE`（完整清单见 [07 §状态机](./07-dev-reference.md#状态机)）
+	  —— 已落 `Idle / Walk / Attack / Jump / Hurt / Down / Rise`（玩家）与 `Approach / Attack / Hurt / Down / Rise / Stunned`（敌人），全部按物理帧计时
+- [x] 三段连击（可取消衔接）、受击硬直、倒地 / 起身（起身无敌）
+	  —— 连击要求 **hit-confirm**（本段命中才递进）+ `cancel_from` 可取消窗口；起身 14 帧无敌
+- [x] Hitbox + 自增 `hit_id`（同一次挥击对同一目标只结算一次）
+	  —— `begin_attack()` 递增编号并清空命中表，判定帧轮询重叠，含高度轴容差
+- [x] 敌人被击倒后 **60 帧眩晕免疫**
+	  —— `Rise` 结束调用 `make_knockdown_immune()`；窗口内**仍吃伤害**、但不再被击倒
 - [ ] 击倒类攻击**随机概率眩晕**（眩晕敌人站立发呆 = 送打窗口，眩晕贯穿起身动画）；击倒时弹**拟声标签「カタ」**、眩晕头顶标签（机制见 [03 §受击](./03-controls-and-system.md#受击硬直眩晕与无敌)）
 - [ ] 伤害计算入口统一走 `基础伤害 × 力量/32`（力量值本里程碑先固定 32）
 
@@ -57,9 +66,12 @@
 
 ### M2 力量（暴击）系统
 
-- [ ] 每角色存力量值（基准 32）；**被击中时重掷**：按「已损失 HP 比例」加权，从当前难度块查表（块内容见 [08 §2](./08-rom-data-tables.md#2-力量power--强度-系统--复刻时最容易漏掉的机制)）
-- [ ] 伤害缩放生效（36/42/48/64 → ×1.125 ~ ×2.00）；不受伤不衰减
-- [ ] 调试 HUD 显示当前力量值（参考改版 PowerIndicator 的做法）
+- [x] 每角色存力量值（基准 32）；**被击中时重掷**：按「已损失 HP 比例」加权，从当前难度块查表（块内容见 [08 §2](./08-rom-data-tables.md#2-力量power--强度-系统--复刻时最容易漏掉的机制)）
+	  —— `PowerTable.BLOCKS` 照抄 ROM 四块（含低难度的 24 / 28），`Player._after_take_damage()` 重掷；加权公式仍是 `[推定]` TODO[实测]
+- [x] 伤害缩放生效（36/42/48/64 → ×1.125 ~ ×2.00）；不受伤不衰减
+	  —— `PowerTable.scale()` = `基础 × 力量 >> 5`，测试里力量 64 时伤害 20 → 40
+- [x] 调试 HUD 显示当前力量值（参考改版 PowerIndicator 的做法）
+	  —— 测试房 HUD 每帧打印 `hp / 力量 / 状态 / 无敌 / 眩晕免疫`
 
 **验收**：满血连击伤害 = 表值（Jack 68），故意挨打到残血后伤害明显上升。
 

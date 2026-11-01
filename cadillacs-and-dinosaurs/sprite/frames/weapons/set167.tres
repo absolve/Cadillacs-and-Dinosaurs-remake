@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_ab71y"]
+[ext_resource type="Texture2D" path="res://sprite/weapons/set167/act00.png" id="2_7hqvy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyms0"]
+atlas = ExtResource("2_7hqvy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iulue"]
+atlas = ExtResource("2_7hqvy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8av8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyms0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iulue")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_ab71y")
+set_index = 167
+category = &"weapons"
+rom_addr = "0x285d8"
+sheet_dir = "res://sprite/weapons/set167"
+sprite_frames = SubResource("SpriteFrames_8av8v")
+acts = {
+"act00": {
+"anchor": Vector2(15, 28),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([1845, 1845]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/weapons/set167/act00.png",
+"size": Vector2i(32, 32),
+"terminated": false
+}
+}

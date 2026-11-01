@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_ve5yr"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set124/act00.png" id="2_tkjou"]
+[ext_resource type="Texture2D" path="res://sprite/effects/set124/act02.png" id="3_cbdb7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efgls"]
+atlas = ExtResource("2_tkjou")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84j37"]
+atlas = ExtResource("2_tkjou")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f1yy"]
+atlas = ExtResource("2_tkjou")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rlwv"]
+atlas = ExtResource("3_cbdb7")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gofr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efgls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84j37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f1yy")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efgls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84j37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f1yy")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rlwv")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_ve5yr")
+set_index = 124
+category = &"effects"
+rom_addr = "0x56c38"
+sheet_dir = "res://sprite/effects/set124"
+sprite_frames = SubResource("SpriteFrames_gofr6")
+acts = {
+"act00": {
+"anchor": Vector2(23, 12),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([2395, 2396, 2391]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set124/act00.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(8, 12),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([2392, 2393, 2394]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set124/act01.png",
+"size": Vector2i(32, 32),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(4, 12),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2394]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/effects/set124/act02.png",
+"size": Vector2i(16, 32),
+"terminated": true
+}
+}

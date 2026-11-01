@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_oafia"]
+[ext_resource type="Texture2D" path="res://sprite/items/set101/act00.png" id="2_8al8f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idnmg"]
+atlas = ExtResource("2_8al8f")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw1pm"]
+atlas = ExtResource("2_8al8f")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67lyt"]
+atlas = ExtResource("2_8al8f")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7seba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idnmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw1pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67lyt")
+}],
+"loop": 1,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idnmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw1pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67lyt")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_oafia")
+set_index = 101
+category = &"items"
+rom_addr = "0x51208"
+sheet_dir = "res://sprite/items/set101"
+sprite_frames = SubResource("SpriteFrames_7seba")
+acts = {
+"act00": {
+"anchor": Vector2(16, 32),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([2185, 2186, 2187]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set101/act00.png",
+"size": Vector2i(48, 32),
+"terminated": false
+},
+"act01": {
+"anchor": Vector2(32, 32),
+"cols": 3,
+"count": 3,
+"frames": Array[int]([2188, 2189, 2190]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/items/set101/act01.png",
+"size": Vector2i(48, 32),
+"terminated": false
+}
+}

@@ -18,6 +18,8 @@
 | [06-enemies-and-bosses.md](./06-enemies-and-bosses.md) | 敌人与 Boss 名单及行为 |
 | [07-dev-reference.md](./07-dev-reference.md) | 复刻实现参考：数值取舍与实现要点 |
 | [08-rom-data-tables.md](./08-rom-data-tables.md) | **原版 ROM 数据表**（血量、伤害、弹药、食物回复、掉落表、关卡尺寸、内存地址） |
+| [09-enemy-and-boss-ai.md](./09-enemy-and-boss-ai.md) | **敌人 / Boss AI 逆向**：更新器指针表、动作状态表、处理函数地址、225 个状态命名、动态验证记录、复现步骤与数据字典 |
+| [10-damage-and-hit-data.md](./10-damage-and-hit-data.md) | **伤害与命中数据**：命中结算链路、敌人攻击表 `0xA2EA4`、玩家 4 角色攻击表、力量倍率、状态→伤害映射、判定盒机制与 317 条盒子、复刻数据需求清单 |
 | [09-development-plan.md](./09-development-plan.md) | **开发计划**：现阶段只实现第 1 关 —— 里程碑 M0~M6、数据准备清单与占位策略 |
 
 ## 关于数据可靠性的说明
@@ -44,13 +46,15 @@
 | [`zelurker/raine`](https://github.com/zelurker/raine) | Raine 模拟器的作弊脚本，提供 Boss HP 等内存地址 |
 | [MAME](https://www.mamedev.org/) | 街机基板、ROM 版本与区域差异（`mamedev/mame` 驱动源码） |
 | [GameFAQs: Cadillacs and Dinosaurs FAQ](https://gamefaqs.gamespot.com/arcade/575551-cadillacs-and-dinosaurs/faqs/53882) | 社区整理的攻略与招式说明（**目前无法访问**，见下） |
-| [`bombzj/arcade-sprite-viewer`](https://github.com/bombzj/arcade-sprite-viewer) | 街机精灵 / 背景查看器（CPS1 / NEOGEO 等），支持本作：从 ROM 拼装精灵、动画与整关场景图，**可显示命中盒**，可在线使用（asv.bombzj.com），适合做美术与判定参考 |
+| [`bombzj/arcade-sprite-viewer`](https://github.com/bombzj/arcade-sprite-viewer) | 街机精灵 / 背景查看器（CPS1 / NEOGEO 等），支持本作：从 ROM 拼装精灵、动画与整关场景图，**可显示命中盒**，可在线使用（asv.bombzj.com），适合做美术与判定参考。**本仓库已把它的解码结果按分类导入 `cadillacs-and-dinosaurs/sprite/`**（187 动画集 / 2335 段 / 12460 帧 + 44 张关卡背景，索引在 `sprite/manifest.json`，用法见 [sprite/README.md](../cadillacs-and-dinosaurs/sprite/README.md)，重生成脚本 `tools/import_dino_sprites.py`） |
 | [The Cutting Room Floor](https://tcrf.net/) | 未使用素材（未采用的开发人员头像、未使用的小恐龙等，**目前无法访问**） |
 
 > **已知的资料缺口**：GameFAQs 的 FAQ 53882 与 TCRF 页面目前都无法抓取
 > （403 / 传输失败）。根据社区索引，这两处最可能包含
 > **各招式具体伤害值、宝物分值、加命阈值、输入窗口帧数**，
 > 这些数据目前在本目录中标记为 `[待核对]`。
+> 其中**敌人/玩家伤害表已从 ROM 直接提取**（见 [10-damage-and-hit-data.md](./10-damage-and-hit-data.md)），
+> 不再依赖外部资料；仍缺的是判定盒、逐帧动作数据与宝物分值。
 
 各文档正文中会给出更细粒度的引用链接。
 

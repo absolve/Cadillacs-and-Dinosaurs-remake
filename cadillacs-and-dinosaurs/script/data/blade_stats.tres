@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3]
+
+[ext_resource type="Script" path="res://script/data/move_data.gd" id="1_u4wq6"]
+[ext_resource type="Script" path="res://script/data/enemy_stats.gd" id="2_xbhnb"]
+
+[sub_resource type="Resource" id="Resource_y5bn7"]
+script = ExtResource("1_u4wq6")
+startup = 24
+recovery = 16
+cancel_from = 40
+hitbox_rect = Rect2(8, -58, 26, 36)
+
+[resource]
+script = ExtResource("2_xbhnb")
+id = &"blade"
+display_name = "Blade / Knife Thrower（投刀者）"
+max_hp = 12
+move_speed = 46.0
+damage = 10
+aggro_range = 320.0
+attack_range = 30.0
+attack_cooldown_frames = 90
+moves = Array[ExtResource("1_u4wq6")]([SubResource("Resource_y5bn7")])

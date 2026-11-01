@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_nb2wy"]
+[ext_resource type="Texture2D" path="res://sprite/items/set179/act00.png" id="2_4dg4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxvmt"]
+atlas = ExtResource("2_4dg4r")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36mnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxvmt")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxvmt")
+}],
+"loop": 0,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxvmt")
+}],
+"loop": 0,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxvmt")
+}],
+"loop": 0,
+"name": &"act03",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_nb2wy")
+set_index = 179
+category = &"items"
+rom_addr = "0x29ac8"
+sheet_dir = "res://sprite/items/set179"
+sprite_frames = SubResource("SpriteFrames_36mnv")
+acts = {
+"act00": {
+"anchor": Vector2(35, 64),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1854]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set179/act00.png",
+"size": Vector2i(80, 64),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(35, 64),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1854]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set179/act01.png",
+"size": Vector2i(80, 64),
+"terminated": true
+},
+"act02": {
+"anchor": Vector2(35, 64),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1854]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set179/act02.png",
+"size": Vector2i(80, 64),
+"terminated": true
+},
+"act03": {
+"anchor": Vector2(35, 64),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([1854]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/items/set179/act03.png",
+"size": Vector2i(80, 64),
+"terminated": true
+}
+}

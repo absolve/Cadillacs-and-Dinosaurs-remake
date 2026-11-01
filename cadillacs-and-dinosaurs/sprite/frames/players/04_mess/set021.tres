@@ -1,0 +1,218 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_mfc1u"]
+[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set021/act00.png" id="2_oruvv"]
+[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set021/act01.png" id="3_0nrog"]
+[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set021/act03.png" id="4_0u4i4"]
+[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set021/act04.png" id="5_klchk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo1n1"]
+atlas = ExtResource("2_oruvv")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cos7w"]
+atlas = ExtResource("3_0nrog")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5jws"]
+atlas = ExtResource("3_0nrog")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro4oa"]
+atlas = ExtResource("4_0u4i4")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pchr1"]
+atlas = ExtResource("4_0u4i4")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0hfo"]
+atlas = ExtResource("4_0u4i4")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2xvv"]
+atlas = ExtResource("4_0u4i4")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7whsw"]
+atlas = ExtResource("4_0u4i4")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1jp3"]
+atlas = ExtResource("5_klchk")
+region = Rect2(0, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eka6o"]
+atlas = ExtResource("5_klchk")
+region = Rect2(115, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yglkg"]
+atlas = ExtResource("5_klchk")
+region = Rect2(230, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nomi1"]
+atlas = ExtResource("5_klchk")
+region = Rect2(345, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61g3x"]
+atlas = ExtResource("5_klchk")
+region = Rect2(460, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w26po"]
+atlas = ExtResource("5_klchk")
+region = Rect2(575, 0, 115, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b3e2"]
+atlas = ExtResource("5_klchk")
+region = Rect2(690, 0, 115, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0hdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo1n1")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cos7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5jws")
+}],
+"loop": 1,
+"name": &"act01",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cos7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5jws")
+}],
+"loop": 1,
+"name": &"act02",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cos7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5jws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro4oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pchr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0hfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2xvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7whsw")
+}],
+"loop": 1,
+"name": &"act03",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1jp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eka6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yglkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nomi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61g3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w26po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b3e2")
+}],
+"loop": 1,
+"name": &"act04",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_mfc1u")
+set_index = 21
+category = &"players"
+group = "mess"
+rom_addr = "0xa24e0"
+sheet_dir = "res://sprite/players/04_mess/set021"
+sprite_frames = SubResource("SpriteFrames_c0hdv")
+acts = {
+"act00": {
+"anchor": Vector2(42, 96),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([671]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/players/04_mess/set021/act00.png",
+"size": Vector2i(64, 96),
+"terminated": true
+},
+"act01": {
+"anchor": Vector2(56, 96),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([673, 674]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/04_mess/set021/act01.png",
+"size": Vector2i(96, 96),
+"terminated": false
+},
+"act02": {
+"anchor": Vector2(56, 96),
+"cols": 2,
+"count": 2,
+"frames": Array[int]([673, 672]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/04_mess/set021/act02.png",
+"size": Vector2i(96, 96),
+"terminated": false
+},
+"act03": {
+"anchor": Vector2(64, 96),
+"cols": 7,
+"count": 7,
+"frames": Array[int]([664, 665, 666, 667, 668, 669, 669]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/04_mess/set021/act03.png",
+"size": Vector2i(96, 96),
+"terminated": false
+},
+"act04": {
+"anchor": Vector2(64, 96),
+"cols": 7,
+"count": 7,
+"frames": Array[int]([658, 659, 660, 661, 662, 662, 663]),
+"loop": true,
+"rows": 1,
+"sheet": "res://sprite/players/04_mess/set021/act04.png",
+"size": Vector2i(115, 96),
+"terminated": false
+}
+}

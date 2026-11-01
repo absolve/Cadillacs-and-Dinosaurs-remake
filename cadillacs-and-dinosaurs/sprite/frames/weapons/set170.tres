@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_8yj36"]
+[ext_resource type="Texture2D" path="res://sprite/weapons/set170/act00.png" id="2_yf4n1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tosx"]
+atlas = ExtResource("2_yf4n1")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptfuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tosx")
+}],
+"loop": 0,
+"name": &"act00",
+"speed": 30.0
+}]
+
+[resource]
+script = ExtResource("1_8yj36")
+set_index = 170
+category = &"weapons"
+rom_addr = "0x29eb4"
+sheet_dir = "res://sprite/weapons/set170"
+sprite_frames = SubResource("SpriteFrames_ptfuw")
+acts = {
+"act00": {
+"anchor": Vector2(16, 8),
+"cols": 1,
+"count": 1,
+"frames": Array[int]([2132]),
+"loop": false,
+"rows": 1,
+"sheet": "res://sprite/weapons/set170/act00.png",
+"size": Vector2i(32, 16),
+"terminated": true
+}
+}
