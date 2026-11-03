@@ -1,5 +1,8 @@
 # 开发计划（第 1 关阶段）
 
+> 本文是 **Phase 1（第 1 关）** 的细化里程碑；全 8 关总体安排与现状盘点见
+> [11-development-roadmap.md](./11-development-roadmap.md)。
+
 ## 结论（TL;DR）
 
 - **本阶段目标：把第 1 关（City in the Sea）从选人到打倒 Vice 完整跑通**，四人可选、单人优先，多人同屏放本阶段末尾或下一阶段。

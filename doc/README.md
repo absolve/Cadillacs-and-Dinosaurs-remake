@@ -20,7 +20,8 @@
 | [08-rom-data-tables.md](./08-rom-data-tables.md) | **原版 ROM 数据表**（血量、伤害、弹药、食物回复、掉落表、关卡尺寸、内存地址） |
 | [09-enemy-and-boss-ai.md](./09-enemy-and-boss-ai.md) | **敌人 / Boss AI 逆向**：更新器指针表、动作状态表、处理函数地址、225 个状态命名、动态验证记录、复现步骤与数据字典 |
 | [10-damage-and-hit-data.md](./10-damage-and-hit-data.md) | **伤害与命中数据**：命中结算链路、敌人攻击表 `0xA2EA4`、玩家 4 角色攻击表、力量倍率、状态→伤害映射、判定盒机制与 317 条盒子、复刻数据需求清单 |
-| [09-development-plan.md](./09-development-plan.md) | **开发计划**：现阶段只实现第 1 关 —— 里程碑 M0~M6、数据准备清单与占位策略 |
+| [09-development-plan.md](./09-development-plan.md) | **开发计划（第 1 关阶段）**：当前目标只实现第 1 关 —— 里程碑 M0~M6、数据准备清单与占位策略 |
+| [11-development-roadmap.md](./11-development-roadmap.md) | **总体路线图**：项目现状盘点、Phase 1~3（第 1 关 → 全部 8 关）划分、贯穿线与风险 |
 
 ## 关于数据可靠性的说明
 
