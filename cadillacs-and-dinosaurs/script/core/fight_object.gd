@@ -78,7 +78,7 @@ enum FighterSide { PLAYER, ENEMY }
 ## 如 `D0=0x0d` → `act13`）。表值来自 doc/10 §8.11 实测状态表，
 ## 未实测到的键保留 `[推定]`（`down` / `rise` / `die`）。
 @export var act_map: Dictionary = {
-	"idle": "g0/act00", "walk": "g0/act01", "run": "g0/act01",
+	"idle": "g0/act00", "walk": "g0/act01", "run": "g0/act09",
 	"attack1": "g0/act03", "attack2": "g0/act06", "attack3": "g1/act12",
 	"jump": "g1/act00", "fall": "g1/act02", "kick": "g1/act08",
 	"hurt": "g0/act13", "stunned": "g0/act13",
