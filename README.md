@@ -78,7 +78,7 @@ python tools/import_dino_sprites.py                  # 导出包 → sprite/ 分
 > & "<GODOT>" --headless --path .\cadillacs-and-dinosaurs res://scene/test/stage_flow_test.tscn
 > ```
 >
-> 100 项断言（动画组与 `act_map` / 招式两段式动画 / 移动 / 纵深 / 边界 / 跳跃 / 飞踢 / 贴地影子 /
+> 103 项断言（动画组与 `act_map` / 招式两段式动画 / 移动 / 纵深 / 边界 / 跳跃 / 飞踢 / 贴地影子 /
 > 三段连击 / hit-confirm / 一次挥击只结算一次 / 力量缩放 / 击倒→起身→眩晕 /
 > 60 帧免疫 / 敌人 AI / 高度轴 / 死亡 / 慢放 tick 门控与全屏慢放）
 > 全绿才算通过；退出码非 0 即有断言失败。图形界面下加 `-- --auto` 同样会跑断言。

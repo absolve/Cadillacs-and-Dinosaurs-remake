@@ -10,7 +10,7 @@ extends Node
 ## 三段连击（hit-confirm + 可取消窗口）/ 打空不连段 / 一次挥击只结算一次 /
 ## 力量缩放 / 击倒→起身→眩晕送打 / 60 帧击倒免疫 / 敌人追击与出招冷却 /
 ## 高度轴容差 / 玩家受击转身与击退 / 敌人死亡 /
-## 慢放 tick 门控与 speed_scale / 击杀双方慢放 / 玩家死亡全屏慢放与恢复。
+## 慢放 tick 门控与 speed_scale / 击杀双方慢放 / 玩家死亡全屏慢放与恢复 / i18n 双语切换。
 
 const ENEMY_SCENE: PackedScene = preload("res://scene/actor/enemy/enemy.tscn")
 const ROOM: GDScript = preload("res://scene/test/test_room.gd")
@@ -60,6 +60,7 @@ func _ready() -> void:
 	await test_player_hurt_knockback()
 	await test_enemy_death()
 	await test_slow_motion()
+	await test_i18n()
 	print("===================================================")
 	if failed == 0:
 		print("✅ 全部 %d 项断言通过" % checked)
@@ -413,6 +414,16 @@ func test_slow_motion() -> void:
 	check(foe.local_ticks - foe_ticks2 <= 3, "全屏慢放下敌人推进减速（9 物理帧 ≤3 有效帧）")
 	await frames(46)
 	check(Game.world_step == 1, "45 物理帧后全屏慢放自动恢复")
+
+
+## 国际化骨架：lang/translations.csv 双语可切换（doc/11 §贯穿线）
+func test_i18n() -> void:
+	Game.set_locale("zh_CN")
+	check(tr("APP_TITLE") == "恐龙快打", "zh_CN 翻译生效（CSV 骨架）")
+	Game.set_locale("en")
+	check(tr("APP_TITLE") == "Cadillacs and Dinosaurs", "en 翻译生效")
+	Game.set_locale("zh_CN")
+	check(Game.locale == "zh_CN", "语言切回默认中文")
 
 
 # ---------------------------------------------------------------- 断言与工具

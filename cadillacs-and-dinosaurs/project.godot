@@ -30,6 +30,10 @@ window/size/window_height_override=672
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[internationalization]
+
+rendering/translations=PackedStringArray("res://lang/translations.en.translation", "res://lang/translations.zh_CN.translation")
+
 [input]
 
 pause={
