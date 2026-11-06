@@ -31,3 +31,6 @@ build/*
 !build/.gitkeep
 /tools
 /cadillacs-and-dinosaurs/tools
+
+# Sprite 翻转工具的幂等标记（本地状态，不入库）
+cadillacs-and-dinosaurs/sprite/.facing_right_flipped.json
