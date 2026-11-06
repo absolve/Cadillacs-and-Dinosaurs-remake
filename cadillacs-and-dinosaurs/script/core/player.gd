@@ -29,6 +29,7 @@ func _ready() -> void:
 	add_to_group(GROUP)
 	super._ready()
 	_apply_stats()
+	Game.player_registered.emit(self)
 
 
 func _apply_stats() -> void:

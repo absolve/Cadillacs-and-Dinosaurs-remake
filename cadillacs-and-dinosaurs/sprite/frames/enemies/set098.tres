@@ -328,7 +328,7 @@ sheet_dir = "res://sprite/enemies/set098"
 sprite_frames = SubResource("SpriteFrames_fqusm")
 acts = {
 "act00": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1901]),
@@ -350,7 +350,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1901, 1904]),
@@ -361,7 +361,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1905, 1906]),
@@ -372,7 +372,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1907]),
@@ -383,7 +383,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(48, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1908]),
@@ -394,7 +394,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(98, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1908, 1909, 1910, 1909, 1910]),
@@ -405,7 +405,7 @@ acts = {
 "terminated": true
 },
 "act07": {
-"anchor": Vector2(48, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1911, 1913]),
@@ -416,7 +416,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(48, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1912, 1920]),
@@ -427,7 +427,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(16, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1914, 1915, 1916]),
@@ -438,7 +438,7 @@ acts = {
 "terminated": false
 },
 "act10": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(48, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1917, 1918, 1919]),
@@ -449,7 +449,7 @@ acts = {
 "terminated": true
 },
 "act11": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(32, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([1921, 1922, 1923, 2171, 2172, 2173, 2174]),
@@ -460,7 +460,7 @@ acts = {
 "terminated": false
 },
 "act12": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(96, 80),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([2176, 2177, 2178, 2179, 2180, 2181, 2182]),

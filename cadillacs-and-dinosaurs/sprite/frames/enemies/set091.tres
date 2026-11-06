@@ -295,7 +295,7 @@ sheet_dir = "res://sprite/enemies/set091"
 sprite_frames = SubResource("SpriteFrames_7fia5")
 acts = {
 "act00": {
-"anchor": Vector2(24, 96),
+"anchor": Vector2(56, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1970]),
@@ -306,7 +306,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(48, 88),
+"anchor": Vector2(40, 88),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1971]),
@@ -317,7 +317,7 @@ acts = {
 "terminated": true
 },
 "act02": {
-"anchor": Vector2(72, 96),
+"anchor": Vector2(56, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1970, 1972, 1973, 1974, 1973, 1974]),
@@ -328,7 +328,7 @@ acts = {
 "terminated": true
 },
 "act03": {
-"anchor": Vector2(72, 96),
+"anchor": Vector2(56, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1971, 1972, 1973, 1974, 1973, 1974]),
@@ -339,7 +339,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(56, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1975, 1970]),
@@ -350,7 +350,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(43, 90),
+"anchor": Vector2(28, 90),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1982, 1983, 1984, 1983]),
@@ -361,7 +361,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(48, 88),
+"anchor": Vector2(40, 88),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1971]),
@@ -372,7 +372,7 @@ acts = {
 "terminated": true
 },
 "act07": {
-"anchor": Vector2(72, 96),
+"anchor": Vector2(56, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1970, 1972, 1973, 1974, 1973, 1974]),
@@ -383,7 +383,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(72, 87),
+"anchor": Vector2(56, 87),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([3229, 1974, 1973, 1974, 1973, 1974]),
@@ -394,7 +394,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(72, 48),
+"anchor": Vector2(56, 48),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1973, 1974, 1973, 1974]),
@@ -405,7 +405,7 @@ acts = {
 "terminated": true
 },
 "act10": {
-"anchor": Vector2(72, 87),
+"anchor": Vector2(56, 87),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([3229, 1974, 1973, 1974]),

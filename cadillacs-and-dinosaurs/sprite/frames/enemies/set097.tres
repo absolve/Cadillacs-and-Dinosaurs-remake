@@ -118,7 +118,7 @@ sheet_dir = "res://sprite/enemies/set097"
 sprite_frames = SubResource("SpriteFrames_sw701")
 acts = {
 "act00": {
-"anchor": Vector2(128, 160),
+"anchor": Vector2(96, 160),
 "cols": 8,
 "count": 14,
 "frames": Array[int]([1621, 1618, 1619, 1620, 1621, 1618, 1619, 1620, 1621, 1618, 1611, 1612, 1611, 1612]),

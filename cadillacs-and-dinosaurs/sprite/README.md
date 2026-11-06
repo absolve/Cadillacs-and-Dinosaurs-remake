@@ -19,6 +19,10 @@
    与 [10-damage-and-hit-data.md §8.2](../../doc/10-damage-and-hit-data.md) 的地址逐一比对，
    185 个集的表指针**完全一致**，可以直接用集号做美术↔判定数据的关联键。
 6. **全部按第 1 关第 1 场景调色板（0-0）渲染**：敌人换色、镜像翻转都要在引擎里自己做。
+7. **人物 / 敌人条图已在本工程内逐格水平镜像（朝右存储）**：ROM 原生朝左
+   （原 `flipping` 口径），由 `tools/flip_facing.gd` 一次性翻正并同步
+   `manifest.json` / `.tres` 的 anchor（ax → w − ax）；运行时仅朝左镜像，
+   其余分类保持 ROM 原向。原始朝左备份在库外 `F:/cad-sprite-backup-left-facing/`。
 7. **Godot 侧直接用 `.tres`**：`sprite/frames/<分类>/<角色组>/setNNN.tres`
    是 `DinoAnimSet`（内含 `SpriteFrames` + 锚点），187 个资源 / 2335 段动画，
    由 `res://tools/build_sprite_frames.gd` 从 `manifest.json` 生成，运行时只取用不重建。

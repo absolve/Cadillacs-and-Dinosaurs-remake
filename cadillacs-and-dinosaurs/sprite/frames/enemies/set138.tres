@@ -131,7 +131,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(72, 64),
+"anchor": Vector2(64, 64),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([2451, 2452, 2453, 2452]),

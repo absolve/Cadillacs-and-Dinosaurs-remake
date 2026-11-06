@@ -168,7 +168,7 @@ sheet_dir = "res://sprite/enemies/set107"
 sprite_frames = SubResource("SpriteFrames_l5hlw")
 acts = {
 "act00": {
-"anchor": Vector2(104, 75),
+"anchor": Vector2(120, 75),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2413]),
@@ -179,7 +179,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(96, 80),
+"anchor": Vector2(128, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2415]),
@@ -223,7 +223,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(104, 75),
+"anchor": Vector2(120, 75),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2412]),
@@ -234,7 +234,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(104, 67),
+"anchor": Vector2(120, 67),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2411]),

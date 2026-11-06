@@ -256,7 +256,7 @@ sheet_dir = "res://sprite/enemies/set031"
 sprite_frames = SubResource("SpriteFrames_uk8m6")
 acts = {
 "act00": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(32, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([419]),
@@ -267,7 +267,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(32, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([419]),
@@ -278,7 +278,7 @@ acts = {
 "terminated": true
 },
 "act02": {
-"anchor": Vector2(80, 80),
+"anchor": Vector2(64, 80),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([427, 428, 3498, 3497, 3498, 3497]),
@@ -289,7 +289,7 @@ acts = {
 "terminated": true
 },
 "act03": {
-"anchor": Vector2(80, 80),
+"anchor": Vector2(64, 80),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([427, 428, 3498, 3497, 3498, 3497]),
@@ -300,7 +300,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(76, 80),
+"anchor": Vector2(55, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([412, 458]),
@@ -311,7 +311,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(80, 96),
+"anchor": Vector2(32, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([419, 413]),
@@ -322,7 +322,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(32, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([419, 419]),
@@ -333,7 +333,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(80, 80),
+"anchor": Vector2(64, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([3246, 3498, 3497, 3498, 3497]),
@@ -344,7 +344,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(80, 80),
+"anchor": Vector2(64, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([3246, 3498, 3497, 3498, 3497]),
@@ -355,7 +355,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(80, 80),
+"anchor": Vector2(64, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([3246, 3246, 3498, 3497, 3497]),
@@ -366,7 +366,7 @@ acts = {
 "terminated": true
 },
 "act10": {
-"anchor": Vector2(80, 76),
+"anchor": Vector2(64, 76),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([3247, 3498, 3497, 3497]),

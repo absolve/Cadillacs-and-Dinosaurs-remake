@@ -199,7 +199,7 @@ sheet_dir = "res://sprite/players/02_mustapha/set010"
 sprite_frames = SubResource("SpriteFrames_7ei7e")
 acts = {
 "act00": {
-"anchor": Vector2(27, 80),
+"anchor": Vector2(37, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([296]),
@@ -210,7 +210,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(56, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([316, 317, 318, 317]),
@@ -221,7 +221,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(72, 80),
+"anchor": Vector2(56, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([321, 322, 323, 300, 301]),
@@ -232,7 +232,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(56, 96),
+"anchor": Vector2(40, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([324, 279, 255, 255]),
@@ -243,7 +243,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([320]),
@@ -254,7 +254,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(32, 80),
+"anchor": Vector2(56, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([319]),
@@ -265,7 +265,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(56, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([316, 321]),
@@ -276,7 +276,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(27, 80),
+"anchor": Vector2(37, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([296]),
@@ -287,7 +287,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(72, 44),
+"anchor": Vector2(40, 44),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([3196]),

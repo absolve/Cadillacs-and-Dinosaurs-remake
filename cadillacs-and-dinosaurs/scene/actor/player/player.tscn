@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://p8ey6dl8ubek" path="res://script/state/shared/hurt_state.gd" id="9_hurt"]
 [ext_resource type="Script" uid="uid://cakdt88ue8p8f" path="res://script/state/shared/down_state.gd" id="10_down"]
 [ext_resource type="Script" uid="uid://3tmx4uleh2y6" path="res://script/state/shared/rise_state.gd" id="11_rise"]
+[ext_resource type="Script" path="res://script/core/fighter_shadow.gd" id="12_shadow"]
 
 [sub_resource type="RectangleShape2D" id="hit_shape"]
 size = Vector2(26, 40)
@@ -24,19 +25,29 @@ act_map = {
 "attack1": "g0/act03",
 "attack2": "g0/act06",
 "attack3": "g1/act12",
+"dash_attack": "g0/act27",
 "down": "g0/act07",
 "die": "g0/act12",
 "fall": "g1/act02",
 "grab": "g5/act12",
+"grab_hold": "g2/act00",
 "hurt": "g0/act13",
 "idle": "g0/act00",
 "jump": "g1/act00",
 "kick": "g1/act08",
 "rise": "g0/act07",
-"run": "g0/act01",
+"roll": "g0/act20",
+"run": "g0/act09",
 "stunned": "g0/act13",
+"throw": "g2/act02",
+"thrown": "g0/act26",
+"victory": "g3/act03",
 "walk": "g0/act01"
 }
+
+[node name="Shadow" type="Node2D" parent="."]
+visibility_layer = 4
+script = ExtResource("12_shadow")
 
 [node name="Body" type="Node2D" parent="." unique_id=2024753829]
 visibility_layer = 4

@@ -434,7 +434,7 @@ sheet_dir = "res://sprite/players/01_jack/set180"
 sprite_frames = SubResource("SpriteFrames_n0csm")
 acts = {
 "act00": {
-"anchor": Vector2(7, 11),
+"anchor": Vector2(9, 11),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1405]),
@@ -467,7 +467,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(0, 8),
+"anchor": Vector2(16, 8),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2098]),
@@ -489,7 +489,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(38, 24),
+"anchor": Vector2(24, 24),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2587, 3087]),
@@ -511,7 +511,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(72, 80),
+"anchor": Vector2(24, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2593, 36]),
@@ -599,7 +599,7 @@ acts = {
 "terminated": false
 },
 "act15": {
-"anchor": Vector2(16, 8),
+"anchor": Vector2(0, 8),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2102]),
@@ -610,7 +610,7 @@ acts = {
 "terminated": false
 },
 "act16": {
-"anchor": Vector2(16, 8),
+"anchor": Vector2(0, 8),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2106, 2102]),
@@ -621,7 +621,7 @@ acts = {
 "terminated": false
 },
 "act17": {
-"anchor": Vector2(16, 8),
+"anchor": Vector2(0, 8),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2102]),
@@ -632,7 +632,7 @@ acts = {
 "terminated": false
 },
 "act18": {
-"anchor": Vector2(16, 8),
+"anchor": Vector2(0, 8),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2109]),
@@ -643,7 +643,7 @@ acts = {
 "terminated": false
 },
 "act19": {
-"anchor": Vector2(32, 16),
+"anchor": Vector2(0, 16),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2113]),
@@ -654,7 +654,7 @@ acts = {
 "terminated": false
 },
 "act20": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(24, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2116, 2094, 77]),
@@ -665,7 +665,7 @@ acts = {
 "terminated": false
 },
 "act21": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(24, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2094, 77]),
@@ -698,7 +698,7 @@ acts = {
 "terminated": false
 },
 "act24": {
-"anchor": Vector2(64, 72),
+"anchor": Vector2(52, 72),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1405, 1759, 41, 1119]),

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scene/test/test_room.gd" id="1_room"]
 [ext_resource type="PackedScene" path="res://scene/actor/player/jack.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scene/actor/enemy/enemy.tscn" id="3_enemy"]
 [ext_resource type="Script" path="res://scene/test/object_states_test.gd" id="4_test"]
+[ext_resource type="PackedScene" path="res://scene/ui/hud.tscn" id="5_hud"]
 
 [node name="TestRoom" type="Node2D"]
 script = ExtResource("1_room")
@@ -50,3 +51,5 @@ text = "P1 / 敌人 状态调试"
 
 [node name="AutoTest" type="Node" parent="."]
 script = ExtResource("4_test")
+
+[node name="PlayerHud" parent="." instance=ExtResource("5_hud")]

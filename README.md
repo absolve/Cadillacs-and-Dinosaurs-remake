@@ -57,6 +57,9 @@ python tools/import_dino_sprites.py                  # 导出包 → sprite/ 分
     --script res://tools/build_sprite_frames.gd      # manifest → sprite/frames/**.tres
 & "<GODOT>" --headless --path .\cadillacs-and-dinosaurs `
     --script res://tools/verify_sprite_frames.gd     # 回读 .tres 与 manifest 对账
+# 一次性（已执行，marker 防重复）：人物/敌人条图就地镜像成朝右存储
+& "<GODOT>" --headless --path .\cadillacs-and-dinosaurs `
+    --script res://tools/flip_facing.gd
 ```
 
 > 主场景当前指向**测试房** `res://scene/test/test_room.tscn`（灰盒街道 + 玩家 / 敌人沙盒）。
@@ -66,9 +69,18 @@ python tools/import_dino_sprites.py                  # 导出包 → sprite/ 分
 > & "<GODOT>" --headless --path .\cadillacs-and-dinosaurs res://scene/test/test_room.tscn
 > ```
 >
-> 74 项断言（动画组与 `act_map` / 招式两段式动画 / 移动 / 纵深 / 边界 / 跳跃 / 飞踢 /
+> 关卡加载（StageDirector / AreaData，第 1 关灰盒数据 + `scene/stage/stage01/` 正式场景 v1）
+> 单独一套断言（37 项：
+> 区域排布 / Y 带 / 摄像机夹取与单向推进 / 触发线刷怪 / 锁屏墙 / 全灭解锁 / 人数标记过滤 /
+> 玩家卡片 HUD / 4 人改版（p4 输入与 count_flag=8）/ stage01 背景铺设计）：
+>
+> ```powershell
+> & "<GODOT>" --headless --path .\cadillacs-and-dinosaurs res://scene/test/stage_flow_test.tscn
+> ```
+>
+> 100 项断言（动画组与 `act_map` / 招式两段式动画 / 移动 / 纵深 / 边界 / 跳跃 / 飞踢 / 贴地影子 /
 > 三段连击 / hit-confirm / 一次挥击只结算一次 / 力量缩放 / 击倒→起身→眩晕 /
-> 60 帧免疫 / 敌人 AI / 高度轴 / 死亡）
+> 60 帧免疫 / 敌人 AI / 高度轴 / 死亡 / 慢放 tick 门控与全屏慢放）
 > 全绿才算通过；退出码非 0 即有断言失败。图形界面下加 `-- --auto` 同样会跑断言。
 
 ## 操作映射
@@ -92,13 +104,15 @@ python tools/import_dino_sprites.py                  # 导出包 → sprite/ 分
 | `p1_attack` | `J`，手柄 X / RB |
 | `p1_jump` | `K`，手柄 A / LB |
 
-### 玩家 2 / 玩家 3
+### 玩家 2 / 玩家 3 / 玩家 4（改版 4 人同屏）
 
-| 动作 | 键位（玩家 2 / 玩家 3） |
+| 动作 | 键位（玩家 2 / 玩家 3 / 玩家 4） |
 | --- | --- |
-| 上 / 下 / 左 / 右 | `↑` `↓` `←` `→` / 小键盘 `8` `5` `4` `6` |
-| `attack` | 小键盘 `1` / 小键盘 `7` |
-| `jump` | 小键盘 `2` / 小键盘 `9` |
+| 上 / 下 / 左 / 右 | `↑` `↓` `←` `→` / 小键盘 `8` `5` `4` `6` / `T` `G` `F` `H` |
+| `attack` | 小键盘 `1` / 小键盘 `7` / `R` |
+| `jump` | 小键盘 `2` / 小键盘 `9` / `Y` |
+
+> 原版为 3 人同屏；本工程按改版扩到 4 人（拍板与口径见 [doc/09 §改版拍板](./doc/09-development-plan.md)）。
 
 组合招式由输入顺序判定，例如「攻击 + 跳跃」同时按下即触发必杀技，
 因此输入映射中不存在单独的必杀技动作。

@@ -172,7 +172,7 @@ sheet_dir = "res://sprite/players/03_hannah/set015"
 sprite_frames = SubResource("SpriteFrames_ka47h")
 acts = {
 "act00": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(24, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1526]),
@@ -183,7 +183,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(40, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1527, 1528, 1529]),
@@ -194,7 +194,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(24, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1530, 1530]),

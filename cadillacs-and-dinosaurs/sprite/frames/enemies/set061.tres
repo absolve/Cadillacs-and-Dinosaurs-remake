@@ -322,7 +322,7 @@ sheet_dir = "res://sprite/enemies/set061"
 sprite_frames = SubResource("SpriteFrames_hui76")
 acts = {
 "act00": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1040]),
@@ -333,7 +333,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(24, 64),
+"anchor": Vector2(40, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1041]),
@@ -377,7 +377,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(40, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1050, 1051, 1050, 1052]),
@@ -388,7 +388,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1047, 1048]),

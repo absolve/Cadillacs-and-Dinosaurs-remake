@@ -848,7 +848,7 @@ sheet_dir = "res://sprite/enemies/set063"
 sprite_frames = SubResource("SpriteFrames_nl850")
 acts = {
 "act00": {
-"anchor": Vector2(42, 94),
+"anchor": Vector2(22, 94),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1053]),
@@ -859,7 +859,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(46, 96),
+"anchor": Vector2(51, 96),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([1054, 1055, 1056, 1057, 1058, 1057, 1056, 1055]),
@@ -870,7 +870,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(62, 96),
+"anchor": Vector2(33, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1059, 1060, 1061, 1062, 1063, 1064]),
@@ -881,7 +881,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(54, 96),
+"anchor": Vector2(28, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1065, 1066, 1067, 1068, 1069, 1070]),
@@ -892,7 +892,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1071, 1072, 1073, 1053]),
@@ -903,7 +903,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([1071, 1073, 1072, 1073, 1072, 1073, 1072]),
@@ -914,7 +914,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1073, 1072]),
@@ -925,7 +925,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1074, 1075, 1076, 1053]),
@@ -936,7 +936,7 @@ acts = {
 "terminated": false
 },
 "act08": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([1074, 1076, 1075, 1076, 1075, 1076, 1075]),
@@ -947,7 +947,7 @@ acts = {
 "terminated": false
 },
 "act09": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1075, 1076]),
@@ -958,7 +958,7 @@ acts = {
 "terminated": false
 },
 "act10": {
-"anchor": Vector2(77, 96),
+"anchor": Vector2(35, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1077, 1075, 1078, 1075, 1077]),
@@ -969,7 +969,7 @@ acts = {
 "terminated": false
 },
 "act11": {
-"anchor": Vector2(77, 96),
+"anchor": Vector2(35, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1079, 1075, 1080, 1075, 1079]),
@@ -980,7 +980,7 @@ acts = {
 "terminated": false
 },
 "act12": {
-"anchor": Vector2(93, 96),
+"anchor": Vector2(51, 96),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1081, 1083, 1083]),
@@ -991,7 +991,7 @@ acts = {
 "terminated": true
 },
 "act13": {
-"anchor": Vector2(93, 96),
+"anchor": Vector2(35, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1082, 1083]),
@@ -1002,7 +1002,7 @@ acts = {
 "terminated": false
 },
 "act14": {
-"anchor": Vector2(119, 96),
+"anchor": Vector2(35, 96),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1077, 1084, 1085]),
@@ -1013,7 +1013,7 @@ acts = {
 "terminated": false
 },
 "act15": {
-"anchor": Vector2(45, 80),
+"anchor": Vector2(35, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1087, 1086, 1087, 1088]),
@@ -1024,7 +1024,7 @@ acts = {
 "terminated": false
 },
 "act16": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1089]),
@@ -1035,7 +1035,7 @@ acts = {
 "terminated": true
 },
 "act17": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1090]),
@@ -1046,7 +1046,7 @@ acts = {
 "terminated": true
 },
 "act18": {
-"anchor": Vector2(32, 96),
+"anchor": Vector2(16, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1091]),
@@ -1057,7 +1057,7 @@ acts = {
 "terminated": true
 },
 "act19": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1092]),
@@ -1068,7 +1068,7 @@ acts = {
 "terminated": true
 },
 "act20": {
-"anchor": Vector2(61, 96),
+"anchor": Vector2(35, 96),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([1071, 1072, 1073, 1053, 1074, 1075, 1076, 1053]),
@@ -1079,7 +1079,7 @@ acts = {
 "terminated": false
 },
 "act21": {
-"anchor": Vector2(48, 94),
+"anchor": Vector2(32, 94),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1090, 1053]),
@@ -1090,7 +1090,7 @@ acts = {
 "terminated": true
 },
 "act22": {
-"anchor": Vector2(49, 59),
+"anchor": Vector2(31, 59),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1094]),
@@ -1101,7 +1101,7 @@ acts = {
 "terminated": true
 },
 "act23": {
-"anchor": Vector2(32, 112),
+"anchor": Vector2(16, 112),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1093]),
@@ -1112,7 +1112,7 @@ acts = {
 "terminated": true
 },
 "act24": {
-"anchor": Vector2(77, 96),
+"anchor": Vector2(35, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1079, 1075, 1080, 1075, 1079]),
@@ -1123,7 +1123,7 @@ acts = {
 "terminated": false
 },
 "act25": {
-"anchor": Vector2(77, 96),
+"anchor": Vector2(35, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1079, 1075, 1080, 1075, 1079]),
@@ -1134,7 +1134,7 @@ acts = {
 "terminated": false
 },
 "act26": {
-"anchor": Vector2(49, 59),
+"anchor": Vector2(31, 59),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1094]),
@@ -1145,7 +1145,7 @@ acts = {
 "terminated": true
 },
 "act27": {
-"anchor": Vector2(119, 80),
+"anchor": Vector2(33, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1084, 1085]),
@@ -1156,7 +1156,7 @@ acts = {
 "terminated": true
 },
 "act28": {
-"anchor": Vector2(93, 96),
+"anchor": Vector2(51, 96),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1081, 1083, 1083]),
@@ -1167,7 +1167,7 @@ acts = {
 "terminated": true
 },
 "act29": {
-"anchor": Vector2(46, 96),
+"anchor": Vector2(51, 96),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([1054, 1055, 1056, 1057, 1058, 1057, 1056, 1055]),
@@ -1178,7 +1178,7 @@ acts = {
 "terminated": false
 },
 "act30": {
-"anchor": Vector2(62, 96),
+"anchor": Vector2(33, 96),
 "cols": 8,
 "count": 12,
 "frames": Array[int]([3473, 3474, 3475, 3476, 3477, 3478, 1059, 1060, 1061, 1062, 1063, 1064]),
@@ -1189,7 +1189,7 @@ acts = {
 "terminated": false
 },
 "act31": {
-"anchor": Vector2(93, 96),
+"anchor": Vector2(58, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([3480, 1083, 1083, 1083]),

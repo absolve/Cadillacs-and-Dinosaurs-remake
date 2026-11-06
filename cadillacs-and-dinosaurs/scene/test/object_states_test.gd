@@ -9,7 +9,8 @@ extends Node
 ## 待机 / 八向走 / 纵深减速 / 可行走带夹取 / 跳跃与落地 / 空中飞踢命中 /
 ## 三段连击（hit-confirm + 可取消窗口）/ 打空不连段 / 一次挥击只结算一次 /
 ## 力量缩放 / 击倒→起身→眩晕送打 / 60 帧击倒免疫 / 敌人追击与出招冷却 /
-## 高度轴容差 / 玩家受击转身与击退 / 敌人死亡。
+## 高度轴容差 / 玩家受击转身与击退 / 敌人死亡 /
+## 慢放 tick 门控与 speed_scale / 击杀双方慢放 / 玩家死亡全屏慢放与恢复。
 
 const ENEMY_SCENE: PackedScene = preload("res://scene/actor/enemy/enemy.tscn")
 const ROOM: GDScript = preload("res://scene/test/test_room.gd")
@@ -58,6 +59,7 @@ func _ready() -> void:
 	await test_height_axis_tolerance()
 	await test_player_hurt_knockback()
 	await test_enemy_death()
+	await test_slow_motion()
 	print("===================================================")
 	if failed == 0:
 		print("✅ 全部 %d 项断言通过" % checked)
@@ -116,9 +118,12 @@ func test_idle_and_walk() -> void:
 
 	var x0 := player.global_position.x
 	press(&"p1_right")
-	await frames(12)
+	# 20 帧 ≈ 32 px 位移（96 px/s）：roster 实例变多后无头模式状态切换会吃掉头几帧，
+	# 12 帧时余量不足，断言时过时挂
+	await frames(20)
 	check(state(player) == &"Walk", "按住右进入 Walk")
-	check(player.face_dir == 1 and not player.sprite.flip_h, "朝右：face_dir=1 且不翻转")
+	check(player.face_dir == 1 and not player.sprite.flip_h,
+			"朝右：face_dir=1 不镜像（素材已按项目口径存成朝右）")
 	check(player.global_position.x > x0 + 10.0, "向右有位移")
 	check(anim(player) == act(player, "walk"), "移动播放 walk 段")
 	release(&"p1_right")
@@ -127,7 +132,7 @@ func test_idle_and_walk() -> void:
 
 	press(&"p1_left")
 	await frames(10)
-	check(player.face_dir == -1 and player.sprite.flip_h, "朝左：face_dir=-1 且贴图翻转")
+	check(player.face_dir == -1 and player.sprite.flip_h, "朝左：face_dir=-1 且贴图运行时镜像")
 	release(&"p1_left")
 	await frames(2)
 
@@ -168,6 +173,10 @@ func test_jump_and_land() -> void:
 	await frames(3)
 	check(state(player) == &"Jump", "按跳进入 Jump")
 	check(player.in_air and player.body.position.y < 0.0, "起跳后浮空（伪 Z 轴）")
+	var shadow := player.get_node_or_null("Shadow") as Node2D
+	check(shadow != null and shadow.global_position == player.global_position,
+			"影子贴脚底，不随伪 Z 抬升（Body 已上升，影子在根节点）")
+	check(foe.get_node_or_null("Shadow") != null, "敌人同样挂贴地影子")
 	check(anim(player) == act(player, "jump") and act(player, "jump").begins_with("g1/"),
 			"跳跃段在组 1（doc/10 §8.11：跳跃 / 攻击段不在基础组）")
 	var guard := 0
@@ -367,6 +376,43 @@ func test_enemy_death() -> void:
 	var hp_before := player.hp
 	await frames(40)
 	check(player.hp == hp_before, "死亡后不再伤害玩家")
+
+
+## 演出慢放（doc/09 §演出慢放设计）：tick 门控、击杀接线、玩家死亡全屏慢放
+func test_slow_motion() -> void:
+	await reset()
+	await frames(30)  # 让上一用例遗留的个体慢放自然耗尽
+	check(Game.world_step == 1, "开局无全屏慢放")
+
+	# 个体门控：step 3 时每 3 物理帧只推进 1 有效帧
+	foe.start_self_slow(3, 6)
+	var foe_ticks := foe.local_ticks
+	await frames(7)
+	check(foe.local_ticks - foe_ticks == 2, "step 3 门控：7 物理帧推进 2 有效帧")
+	check(absf(foe.sprite.speed_scale - 1.0 / 3.0) < 0.01, "动画 speed_scale 同步降为 1/3")
+	await frames(12)  # 累计 18+ 物理帧 = 6 有效帧，刚好耗尽
+	check(foe.local_step() == 1, "有效帧耗尽后自动恢复正常步长")
+
+	# 击杀接线：死者与凶手同时进慢放
+	await reset()
+	place(foe, ENEMY_NEAR)
+	var player_ticks := player.local_ticks
+	foe.take_damage(999, 1, false, player)
+	check(foe.local_step() == 3, "被击杀者进 1/3 慢放")
+	await frames(7)
+	check(player.local_ticks - player_ticks == 2, "凶手进 1/3 慢放（门控生效）")
+
+	# 玩家死亡：全屏 1/4 慢放，45 物理帧后自动恢复
+	Game.set_world_slow(1, 0)  # 防御性复位，保证只测本用例的世界层
+	player.hp = 1
+	player.take_damage(10, 1, false, foe)
+	check(player.is_dead, "玩家死亡")
+	check(Game.world_step == 4, "玩家死亡触发全屏 1/4 慢放")
+	var foe_ticks2 := foe.local_ticks
+	await frames(9)
+	check(foe.local_ticks - foe_ticks2 <= 3, "全屏慢放下敌人推进减速（9 物理帧 ≤3 有效帧）")
+	await frames(46)
+	check(Game.world_step == 1, "45 物理帧后全屏慢放自动恢复")
 
 
 # ---------------------------------------------------------------- 断言与工具

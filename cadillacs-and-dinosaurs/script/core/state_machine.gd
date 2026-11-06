@@ -59,6 +59,10 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if current_state == null:
 		return
+	# 慢放门控：宿主 FightObject 决定本物理帧是否推进（doc/09 §演出慢放设计）
+	var host := owner as FightObject
+	if host != null and not host.is_local_tick():
+		return
 	frames_since_start += 1
 	current_state.frames_in_state += 1
 	current_state.physics_update(delta)

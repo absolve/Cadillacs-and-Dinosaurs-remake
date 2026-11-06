@@ -685,7 +685,7 @@ acts = {
 "terminated": false
 },
 "act08": {
-"anchor": Vector2(19, 32),
+"anchor": Vector2(29, 32),
 "cols": 8,
 "count": 15,
 "frames": Array[int]([1099, 3287, 1099, 3287, 1099, 3287, 1099, 3287, 1099, 3287, 1099, 3287, 1099, 3287, 1099]),
@@ -718,7 +718,7 @@ acts = {
 "terminated": false
 },
 "act11": {
-"anchor": Vector2(64, 40),
+"anchor": Vector2(48, 40),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([600]),

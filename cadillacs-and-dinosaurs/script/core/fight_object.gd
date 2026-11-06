@@ -83,9 +83,16 @@ enum FighterSide { PLAYER, ENEMY }
 	"jump": "g1/act00", "fall": "g1/act02", "kick": "g1/act08",
 	"hurt": "g0/act13", "stunned": "g0/act13",
 	"down": "g0/act07", "rise": "g0/act07", "die": "g0/act12",
+	# 以下为 doc/10 §8.7 看图判定 / §8.9 组语义的槽位（抓取 = §8.11 实测 g5:12），
+	# 状态实现落地于 M3（抓取/投技/冲刺攻击）与 M6（胜利），未实测键仍为 `[推定]`
+	"dash_attack": "g0/act27", "roll": "g0/act20", "thrown": "g0/act26",
+	"grab": "g5/act12", "grab_hold": "g2/act00", "throw": "g2/act02",
+	"victory": "g3/act03",
 }
 
-## 朝向：1 = 右，-1 = 左（对应 ROM `+0x24`，0=左 / 1=右）
+## 朝向：1 = 右，-1 = 左（对应 ROM `+0x24`，0=左 / 1=右）。
+## 人物 / 敌人素材已按项目口径**朝右**存储（tools/flip_facing.gd 就地翻转），
+## 因此 `face_dir=-1`（朝左）时运行时镜像
 var face_dir: int = 1
 var in_air: bool = false
 ## 伪 Z 轴（离地）速度 px/s，负值向上
@@ -122,7 +129,48 @@ func _ready() -> void:
 	play_action(&"idle")
 
 
+@export_group("慢放")
+## 个体慢放步长：1 = 正常；N = 每 N 物理帧推进 1 有效帧（doc/09 §演出慢放设计）
+var self_slow_step: int = 1
+## 剩余有效帧数（按有效帧倒计时）
+var _self_slow_left: int = 0
+var _tick_acc: int = 0
+var _is_local_tick: bool = false
+## 已推进的有效帧计数（测试与调试用）
+var local_ticks: int = 0
+
+
+## 个体慢放 `[推定]` TODO[实测]（帧数待对照原版录像）
+func start_self_slow(step: int, effective_frames: int) -> void:
+	self_slow_step = clampi(step, 1, 8)
+	_self_slow_left = maxi(_self_slow_left, effective_frames)
+
+
+## 有效步长 = 个体 × 全屏（两者相乘，取值 1..16）
+func local_step() -> int:
+	var s := self_slow_step if _self_slow_left > 0 else 1
+	return s * Game.world_step
+
+
+## 本物理帧是否推进逻辑（[StateMachine] 分发前查询）
+func is_local_tick() -> bool:
+	return _is_local_tick
+
+
 func _physics_process(_delta: float) -> void:
+	_tick_acc += 1
+	var step := local_step()
+	# 动画与逻辑同缩放（每物理帧刷新，保证慢放开始/结束即时生效）
+	sprite.speed_scale = 1.0 / float(step)
+	if _tick_acc < step:
+		_is_local_tick = false
+		return
+	_tick_acc -= step
+	_is_local_tick = true
+	local_ticks += 1
+	_self_slow_left = maxi(_self_slow_left - 1, 0)
+	if _self_slow_left == 0:
+		self_slow_step = 1
 	invincible_left = maxi(invincible_left - 1, 0)
 	knockdown_immune_left = maxi(knockdown_immune_left - 1, 0)
 
@@ -227,6 +275,7 @@ func set_face_dir(direction: float) -> void:
 	if next == face_dir:
 		return
 	face_dir = next
+	# 素材已按项目口径就地翻成朝右存储（tools/flip_facing.gd）：朝左时才镜像
 	sprite.flip_h = face_dir < 0
 	# 攻击盒翻到身体另一侧
 	hitbox_shape.position.x = absf(hitbox_shape.position.x) * face_dir
@@ -349,6 +398,10 @@ func take_damage(amount: int, from_dir: int = 0, knockdown: bool = false, _sourc
 	hp_changed.emit(hp, max_hp)
 	_after_take_damage()
 	if hp <= 0:
+		# 击杀慢放：死者 1/3 × 18 有效帧，凶手 1/3 × 6 有效帧 `[推定]` TODO[实测]
+		if _source != null:
+			_source.start_self_slow(3, 6)
+		start_self_slow(3, 18)
 		die()
 		return
 	var data := { "damage": amount, "push_dir": from_dir, "knockdown": knockdown }
@@ -372,6 +425,9 @@ func die() -> void:
 	set_hitbox_enabled(false)
 	velocity = Vector2.ZERO
 	play_action(&"die")
+	# 玩家死亡：全屏慢放 1/4 × 45 物理帧 `[推定]` TODO[实测]
+	if side == FighterSide.PLAYER:
+		Game.set_world_slow(4, 45)
 	died.emit()
 
 

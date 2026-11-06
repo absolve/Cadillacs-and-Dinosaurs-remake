@@ -192,7 +192,7 @@ sheet_dir = "res://sprite/players/04_mess/set022"
 sprite_frames = SubResource("SpriteFrames_kysif")
 acts = {
 "act00": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(56, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([754]),
@@ -203,7 +203,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([775, 773, 774, 773]),
@@ -214,7 +214,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(64, 64),
+"anchor": Vector2(56, 64),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([778, 763, 758, 759]),
@@ -236,7 +236,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([776]),
@@ -247,7 +247,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([777]),
@@ -258,7 +258,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([776, 777]),
@@ -269,7 +269,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([777]),
@@ -280,7 +280,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(96, 48),
+"anchor": Vector2(16, 48),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([3255]),

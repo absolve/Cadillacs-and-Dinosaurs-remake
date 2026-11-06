@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="Script" path="res://script/core/enemy.gd" id="1_enemy"]
 [ext_resource type="Resource" path="res://script/data/ferris_stats.tres" id="2_stats"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://script/state/shared/down_state.gd" id="8_down"]
 [ext_resource type="Script" path="res://script/state/shared/rise_state.gd" id="9_rise"]
 [ext_resource type="Script" path="res://script/state/enemy/stunned_state.gd" id="10_stunned"]
+[ext_resource type="Script" path="res://script/core/fighter_shadow.gd" id="11_shadow"]
 
 [sub_resource type="RectangleShape2D" id="hit_shape"]
 size = Vector2(24, 36)
@@ -41,6 +42,10 @@ act_map = {
 "stunned": "g0/act10",
 "walk": "g0/act01"
 }
+
+[node name="Shadow" type="Node2D" parent="."]
+visibility_layer = 4
+script = ExtResource("11_shadow")
 
 [node name="Body" type="Node2D" parent="."]
 visibility_layer = 4

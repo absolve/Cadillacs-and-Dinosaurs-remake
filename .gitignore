@@ -13,6 +13,7 @@ Thumbs.db
 export.cfg
 export_credentials.cfg
 *.tmp
+*.import
 
 # Imported translations (automatically generated from CSV files)
 *.translation

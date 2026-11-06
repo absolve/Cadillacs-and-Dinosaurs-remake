@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scene/test/stage_flow_test.gd" id="1_root"]
+[ext_resource type="PackedScene" path="res://scene/common/stage_camera.tscn" id="2_cam"]
+[ext_resource type="PackedScene" path="res://scene/ui/hud.tscn" id="3_hud"]
+
+[node name="StageFlowTest" type="Node2D"]
+script = ExtResource("1_root")
+
+[node name="Actors" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="StageCamera" parent="." instance=ExtResource("2_cam")]
+
+[node name="PlayerHud" parent="." instance=ExtResource("3_hud")]

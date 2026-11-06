@@ -360,7 +360,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(72, 106),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1211, 1214, 1215, 1172]),
@@ -415,7 +415,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(88, 48),
+"anchor": Vector2(72, 48),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1211, 1212, 1211, 1212]),

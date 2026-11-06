@@ -1,28 +1,28 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://cc6k7kou8ns4e"]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
 
-[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_327oi"]
-[ext_resource type="Texture2D" uid="uid://c17tutp8cs6ww" path="res://sprite/players/01_jack/set000/act00.png" id="2_22qaj"]
-[ext_resource type="Texture2D" uid="uid://bwv72fcvft0x7" path="res://sprite/players/01_jack/set000/act01.png" id="3_123wy"]
-[ext_resource type="Texture2D" uid="uid://bqh73isrywnhv" path="res://sprite/players/01_jack/set000/act02.png" id="4_v6fm8"]
-[ext_resource type="Texture2D" uid="uid://b4od6xfm80m7u" path="res://sprite/players/01_jack/set000/act03.png" id="5_23n2o"]
-[ext_resource type="Texture2D" uid="uid://d03uepjvjen05" path="res://sprite/players/01_jack/set000/act04.png" id="6_6gvir"]
-[ext_resource type="Texture2D" uid="uid://bs46scybtxs3p" path="res://sprite/players/01_jack/set000/act06.png" id="7_qegjr"]
-[ext_resource type="Texture2D" uid="uid://badn4yaijp2y7" path="res://sprite/players/01_jack/set000/act08.png" id="8_uwntw"]
-[ext_resource type="Texture2D" uid="uid://blrax323sdbjq" path="res://sprite/players/01_jack/set000/act09.png" id="9_ds3jy"]
-[ext_resource type="Texture2D" uid="uid://dnhwn7qxarmft" path="res://sprite/players/01_jack/set000/act10.png" id="10_w8lsp"]
-[ext_resource type="Texture2D" uid="uid://ckj5hd42t3j8w" path="res://sprite/players/01_jack/set000/act11.png" id="11_pw0kx"]
-[ext_resource type="Texture2D" uid="uid://b4lqgo3vvtnub" path="res://sprite/players/01_jack/set000/act13.png" id="12_8b8et"]
-[ext_resource type="Texture2D" uid="uid://d1ibg1scyym87" path="res://sprite/players/01_jack/set000/act14.png" id="13_2td7p"]
-[ext_resource type="Texture2D" uid="uid://cifbsm82jd522" path="res://sprite/players/01_jack/set000/act15.png" id="14_erqcm"]
-[ext_resource type="Texture2D" uid="uid://dkcxnd2thla2v" path="res://sprite/players/01_jack/set000/act16.png" id="15_hyok7"]
-[ext_resource type="Texture2D" uid="uid://bm3of667h6uce" path="res://sprite/players/01_jack/set000/act19.png" id="16_vnqlw"]
-[ext_resource type="Texture2D" uid="uid://cuj16kololc7h" path="res://sprite/players/01_jack/set000/act20.png" id="17_ilbrh"]
-[ext_resource type="Texture2D" uid="uid://c2cdei8syxppm" path="res://sprite/players/01_jack/set000/act21.png" id="18_7dhb4"]
-[ext_resource type="Texture2D" uid="uid://d4f3e42emlucm" path="res://sprite/players/01_jack/set000/act22.png" id="19_e6igp"]
-[ext_resource type="Texture2D" uid="uid://j85v5t6nbh64" path="res://sprite/players/01_jack/set000/act26.png" id="20_3yl40"]
-[ext_resource type="Texture2D" uid="uid://dan2hgi7onr17" path="res://sprite/players/01_jack/set000/act28.png" id="21_788ad"]
-[ext_resource type="Texture2D" uid="uid://d2esf3flq86rq" path="res://sprite/players/01_jack/set000/act29.png" id="22_elo5v"]
-[ext_resource type="Texture2D" uid="uid://bn5gxxkedprem" path="res://sprite/players/01_jack/set000/act31.png" id="23_hkscn"]
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_327oi"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act00.png" id="2_22qaj"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act01.png" id="3_123wy"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act02.png" id="4_v6fm8"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act03.png" id="5_23n2o"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act04.png" id="6_6gvir"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act06.png" id="7_qegjr"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act08.png" id="8_uwntw"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act09.png" id="9_ds3jy"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act10.png" id="10_w8lsp"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act11.png" id="11_pw0kx"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act13.png" id="12_8b8et"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act14.png" id="13_2td7p"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act15.png" id="14_erqcm"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act16.png" id="15_hyok7"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act19.png" id="16_vnqlw"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act20.png" id="17_ilbrh"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act21.png" id="18_7dhb4"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act22.png" id="19_e6igp"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act26.png" id="20_3yl40"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act28.png" id="21_788ad"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act29.png" id="22_elo5v"]
+[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set000/act31.png" id="23_hkscn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oin4o"]
 atlas = ExtResource("2_22qaj")
@@ -1327,7 +1327,7 @@ sheet_dir = "res://sprite/players/01_jack/set000"
 sprite_frames = SubResource("SpriteFrames_rbebn")
 acts = {
 "act00": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 8,
 "count": 14,
 "frames": Array[int]([0, 0, 0, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 0]),
@@ -1338,7 +1338,7 @@ acts = {
 "terminated": false
 },
 "act01": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(32, 80),
 "cols": 8,
 "count": 12,
 "frames": Array[int]([4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]),
@@ -1349,7 +1349,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(56, 80),
 "cols": 8,
 "count": 10,
 "frames": Array[int]([16, 20, 21, 22, 23, 24, 17, 18, 19, 20]),
@@ -1360,7 +1360,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(32, 96),
+"anchor": Vector2(24, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([26, 27, 28, 27, 26]),
@@ -1371,7 +1371,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([33, 32, 31, 30, 29]),
@@ -1382,7 +1382,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([29, 30, 31, 32, 33]),
@@ -1393,7 +1393,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 8,
 "count": 15,
 "frames": Array[int]([25, 0, 0, 0, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 0]),
@@ -1404,7 +1404,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([32, 31, 30, 29]),
@@ -1415,7 +1415,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(32, 96),
+"anchor": Vector2(47, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([34, 27]),
@@ -1426,7 +1426,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(48, 80),
+"anchor": Vector2(56, 80),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([21, 22, 23, 24, 17, 18, 19, 20]),
@@ -1437,7 +1437,7 @@ acts = {
 "terminated": false
 },
 "act10": {
-"anchor": Vector2(40, 48),
+"anchor": Vector2(24, 48),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([113, 113]),
@@ -1448,7 +1448,7 @@ acts = {
 "terminated": false
 },
 "act11": {
-"anchor": Vector2(40, 48),
+"anchor": Vector2(56, 48),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([167, 168, 169, 170, 163, 164, 165, 166]),
@@ -1459,7 +1459,7 @@ acts = {
 "terminated": false
 },
 "act12": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([30, 31, 32, 33]),
@@ -1470,7 +1470,7 @@ acts = {
 "terminated": true
 },
 "act13": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 8,
 "count": 16,
 "frames": Array[int]([113, 25, 0, 0, 0, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 0]),
@@ -1492,7 +1492,7 @@ acts = {
 "terminated": false
 },
 "act15": {
-"anchor": Vector2(88, 80),
+"anchor": Vector2(64, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([115, 116, 117]),
@@ -1503,7 +1503,7 @@ acts = {
 "terminated": false
 },
 "act16": {
-"anchor": Vector2(40, 48),
+"anchor": Vector2(24, 48),
 "cols": 8,
 "count": 12,
 "frames": Array[int]([151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162]),
@@ -1514,7 +1514,7 @@ acts = {
 "terminated": false
 },
 "act17": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2]),
@@ -1525,7 +1525,7 @@ acts = {
 "terminated": true
 },
 "act18": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2]),
@@ -1536,7 +1536,7 @@ acts = {
 "terminated": true
 },
 "act19": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(24, 64),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([113, 114]),
@@ -1547,7 +1547,7 @@ acts = {
 "terminated": false
 },
 "act20": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([33, 32, 31, 30, 29, 26]),
@@ -1558,7 +1558,7 @@ acts = {
 "terminated": true
 },
 "act21": {
-"anchor": Vector2(56, 96),
+"anchor": Vector2(40, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([46, 47, 48, 26]),
@@ -1569,7 +1569,7 @@ acts = {
 "terminated": true
 },
 "act22": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(24, 64),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([113, 114, 114]),
@@ -1580,7 +1580,7 @@ acts = {
 "terminated": false
 },
 "act23": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(24, 64),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([113, 25]),
@@ -1591,7 +1591,7 @@ acts = {
 "terminated": false
 },
 "act24": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(24, 64),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([113, 114, 114]),
@@ -1602,7 +1602,7 @@ acts = {
 "terminated": false
 },
 "act25": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(24, 64),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([113, 114, 114]),
@@ -1613,7 +1613,7 @@ acts = {
 "terminated": false
 },
 "act26": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 8,
 "count": 9,
 "frames": Array[int]([33, 32, 31, 30, 27, 32, 31, 30, 29]),
@@ -1624,7 +1624,7 @@ acts = {
 "terminated": true
 },
 "act27": {
-"anchor": Vector2(48, 96),
+"anchor": Vector2(40, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([27, 26, 17, 27, 28, 27, 26]),
@@ -1646,7 +1646,7 @@ acts = {
 "terminated": true
 },
 "act29": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 8,
 "count": 17,
 "frames": Array[int]([2700, 113, 25, 0, 0, 0, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 0]),
@@ -1657,7 +1657,7 @@ acts = {
 "terminated": false
 },
 "act30": {
-"anchor": Vector2(40, 96),
+"anchor": Vector2(24, 96),
 "cols": 8,
 "count": 16,
 "frames": Array[int]([113, 25, 0, 0, 0, 2, 3, 2, 3, 2, 3, 2, 3, 0, 0, 0]),
@@ -1668,7 +1668,7 @@ acts = {
 "terminated": false
 },
 "act31": {
-"anchor": Vector2(80, 96),
+"anchor": Vector2(32, 96),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([113, 114, 78, 100, 101, 102]),

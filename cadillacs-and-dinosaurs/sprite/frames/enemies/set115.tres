@@ -177,7 +177,7 @@ sheet_dir = "res://sprite/enemies/set115"
 sprite_frames = SubResource("SpriteFrames_sf8x6")
 acts = {
 "act00": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([2524, 2570, 2522, 3249, 2531, 3248]),
@@ -188,7 +188,7 @@ acts = {
 "terminated": false
 },
 "act01": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([2570, 2522, 3249, 2531, 3248, 2524]),
@@ -199,7 +199,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([2522, 3249, 2531, 3248, 2524, 2570]),
@@ -210,7 +210,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([3249, 2531, 3248, 2524, 2570, 2522]),
@@ -221,7 +221,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([2531, 3248, 2524, 2570, 2522, 3249]),
@@ -232,7 +232,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(126, 113),
+"anchor": Vector2(128, 113),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([3248, 2524, 2570, 2522, 3249, 2531]),

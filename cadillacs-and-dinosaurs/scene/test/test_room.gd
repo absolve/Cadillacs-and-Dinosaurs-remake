@@ -11,6 +11,8 @@ const FRONT_MARGIN := Vector2(0, -24)
 const ROSTER: Array[PackedScene] = [
 	preload("res://scene/actor/player/jack.tscn"),
 	preload("res://scene/actor/player/hannah.tscn"),
+	preload("res://scene/actor/player/mustapha.tscn"),
+	preload("res://scene/actor/player/mess.tscn"),
 ]
 
 ## 可行走带（世界坐标），对应原版第 1 关 A 段的 Y 区间 147/100 的灰盒版
@@ -33,7 +35,7 @@ func _ready() -> void:
 	# 无头跑断言时不响应换角色，避免把测试对象换掉
 	_swapping_enabled = DisplayServer.get_name() != "headless"
 	print("测试房就绪：p1_left/right/up/down 移动，p1_attack 出拳，p1_jump 跳跃 / 飞踢")
-	print("换角色：1 = Jack，2 = Hannah")
+	print("换角色：1 = Jack，2 = Hannah，3 = Mustapha，4 = Mess")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,6 +46,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			swap_player(0)
 		KEY_2:
 			swap_player(1)
+		KEY_3:
+			swap_player(2)
+		KEY_4:
+			swap_player(3)
 
 
 ## 就地替换玩家场景：位置与可行走带保持不变

@@ -294,7 +294,7 @@ sheet_dir = "res://sprite/enemies/set049"
 sprite_frames = SubResource("SpriteFrames_nqt4r")
 acts = {
 "act00": {
-"anchor": Vector2(24, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([552]),
@@ -305,7 +305,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(48, 80),
+"anchor": Vector2(32, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([553]),
@@ -316,7 +316,7 @@ acts = {
 "terminated": true
 },
 "act02": {
-"anchor": Vector2(63, 80),
+"anchor": Vector2(48, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([552, 555, 556, 555, 556]),
@@ -327,7 +327,7 @@ acts = {
 "terminated": true
 },
 "act03": {
-"anchor": Vector2(63, 74),
+"anchor": Vector2(48, 74),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([554, 555, 556, 555, 556]),
@@ -338,7 +338,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([538]),
@@ -349,7 +349,7 @@ acts = {
 "terminated": true
 },
 "act05": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([559, 560]),
@@ -360,7 +360,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(63, 80),
+"anchor": Vector2(48, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([557, 558, 556]),
@@ -371,7 +371,7 @@ acts = {
 "terminated": true
 },
 "act07": {
-"anchor": Vector2(63, 80),
+"anchor": Vector2(48, 80),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([552, 555, 556, 555, 556]),
@@ -382,7 +382,7 @@ acts = {
 "terminated": true
 },
 "act08": {
-"anchor": Vector2(63, 69),
+"anchor": Vector2(48, 69),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([3264, 555, 556, 555, 556]),
@@ -393,7 +393,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(63, 65),
+"anchor": Vector2(48, 65),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([555, 556, 555, 556]),
@@ -404,7 +404,7 @@ acts = {
 "terminated": true
 },
 "act10": {
-"anchor": Vector2(63, 69),
+"anchor": Vector2(48, 69),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([3264, 556, 555, 556]),

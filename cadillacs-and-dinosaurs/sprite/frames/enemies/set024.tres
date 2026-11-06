@@ -1,20 +1,20 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://cvvxvsvwyk5ma"]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
 
-[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_syst7"]
-[ext_resource type="Texture2D" uid="uid://bk66dxp3jalq4" path="res://sprite/enemies/set024/act00.png" id="2_tr7md"]
-[ext_resource type="Texture2D" uid="uid://bd361kc4w1khe" path="res://sprite/enemies/set024/act01.png" id="3_bckfh"]
-[ext_resource type="Texture2D" uid="uid://b80s8k6vgvxp2" path="res://sprite/enemies/set024/act02.png" id="4_p4wad"]
-[ext_resource type="Texture2D" uid="uid://btgwpmadim3n" path="res://sprite/enemies/set024/act03.png" id="5_6gufs"]
-[ext_resource type="Texture2D" uid="uid://dpkqhwshbrncl" path="res://sprite/enemies/set024/act04.png" id="6_m4ciq"]
-[ext_resource type="Texture2D" uid="uid://dg3gpj2gh0oe2" path="res://sprite/enemies/set024/act05.png" id="7_80kh4"]
-[ext_resource type="Texture2D" uid="uid://dknagpyyhsnmm" path="res://sprite/enemies/set024/act06.png" id="8_8pe1u"]
-[ext_resource type="Texture2D" uid="uid://djvkqa2g2eytt" path="res://sprite/enemies/set024/act08.png" id="9_7sj2v"]
-[ext_resource type="Texture2D" uid="uid://2una0ix71np4" path="res://sprite/enemies/set024/act09.png" id="10_8jacb"]
-[ext_resource type="Texture2D" uid="uid://dxe6mm2a1ajgp" path="res://sprite/enemies/set024/act10.png" id="11_h1n45"]
-[ext_resource type="Texture2D" uid="uid://c67p34euqiijk" path="res://sprite/enemies/set024/act12.png" id="12_tbsxg"]
-[ext_resource type="Texture2D" uid="uid://d1oh48m0fyc50" path="res://sprite/enemies/set024/act13.png" id="13_dhyyd"]
-[ext_resource type="Texture2D" uid="uid://dk3cxf2is6p4y" path="res://sprite/enemies/set024/act14.png" id="14_0xtli"]
-[ext_resource type="Texture2D" uid="uid://dwxk7uwatvhc4" path="res://sprite/enemies/set024/act16.png" id="15_rtldb"]
+[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_syst7"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act00.png" id="2_tr7md"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act01.png" id="3_bckfh"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act02.png" id="4_p4wad"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act03.png" id="5_6gufs"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act04.png" id="6_m4ciq"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act05.png" id="7_80kh4"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act06.png" id="8_8pe1u"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act08.png" id="9_7sj2v"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act09.png" id="10_8jacb"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act10.png" id="11_h1n45"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act12.png" id="12_tbsxg"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act13.png" id="13_dhyyd"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act14.png" id="14_0xtli"]
+[ext_resource type="Texture2D" path="res://sprite/enemies/set024/act16.png" id="15_rtldb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lb20w"]
 atlas = ExtResource("2_tr7md")
@@ -518,7 +518,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2465, 2466, 2465]),
@@ -529,7 +529,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(72, 80),
+"anchor": Vector2(32, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([2462, 2463, 2464, 2463]),
@@ -540,7 +540,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(24, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2467, 2468, 2467]),
@@ -551,7 +551,7 @@ acts = {
 "terminated": false
 },
 "act06": {
-"anchor": Vector2(96, 45),
+"anchor": Vector2(64, 45),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([845]),
@@ -562,7 +562,7 @@ acts = {
 "terminated": true
 },
 "act07": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(24, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2467, 2468, 2467]),
@@ -573,7 +573,7 @@ acts = {
 "terminated": false
 },
 "act08": {
-"anchor": Vector2(64, 115),
+"anchor": Vector2(40, 115),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([2461, 2441, 2472, 2472]),
@@ -617,7 +617,7 @@ acts = {
 "terminated": true
 },
 "act12": {
-"anchor": Vector2(32, 115),
+"anchor": Vector2(24, 115),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2441]),
@@ -639,7 +639,7 @@ acts = {
 "terminated": false
 },
 "act14": {
-"anchor": Vector2(72, 65),
+"anchor": Vector2(64, 65),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([2494, 3194, 3193, 2496, 2497, 2498, 2497]),
@@ -650,7 +650,7 @@ acts = {
 "terminated": true
 },
 "act15": {
-"anchor": Vector2(72, 65),
+"anchor": Vector2(64, 65),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([2494, 3194, 3193, 2496, 2497, 2498, 2497]),

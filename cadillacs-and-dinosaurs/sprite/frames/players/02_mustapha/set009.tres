@@ -133,7 +133,7 @@ sheet_dir = "res://sprite/players/02_mustapha/set009"
 sprite_frames = SubResource("SpriteFrames_gx5l6")
 acts = {
 "act00": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(24, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([249]),
@@ -144,7 +144,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(24, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([250, 251, 250]),
@@ -155,7 +155,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(8, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([252, 252, 252]),
@@ -166,7 +166,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(39, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([253, 254, 255, 255]),
@@ -177,7 +177,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(56, 80),
+"anchor": Vector2(39, 80),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([253, 254, 255, 255]),

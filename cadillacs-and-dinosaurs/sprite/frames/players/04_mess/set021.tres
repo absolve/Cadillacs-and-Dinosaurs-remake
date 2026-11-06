@@ -161,7 +161,7 @@ sheet_dir = "res://sprite/players/04_mess/set021"
 sprite_frames = SubResource("SpriteFrames_c0hdv")
 acts = {
 "act00": {
-"anchor": Vector2(42, 96),
+"anchor": Vector2(22, 96),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([671]),
@@ -172,7 +172,7 @@ acts = {
 "terminated": true
 },
 "act01": {
-"anchor": Vector2(56, 96),
+"anchor": Vector2(40, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([673, 674]),
@@ -183,7 +183,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(56, 96),
+"anchor": Vector2(40, 96),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([673, 672]),
@@ -194,7 +194,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(32, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([664, 665, 666, 667, 668, 669, 669]),
@@ -205,7 +205,7 @@ acts = {
 "terminated": false
 },
 "act04": {
-"anchor": Vector2(64, 96),
+"anchor": Vector2(51, 96),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([658, 659, 660, 661, 662, 662, 663]),

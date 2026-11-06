@@ -927,7 +927,7 @@ acts = {
 "terminated": false
 },
 "act02": {
-"anchor": Vector2(56, 106),
+"anchor": Vector2(40, 106),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1178, 1179, 1179]),
@@ -938,7 +938,7 @@ acts = {
 "terminated": true
 },
 "act03": {
-"anchor": Vector2(56, 90),
+"anchor": Vector2(40, 90),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([1178]),
@@ -949,7 +949,7 @@ acts = {
 "terminated": true
 },
 "act04": {
-"anchor": Vector2(32, 104),
+"anchor": Vector2(48, 104),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1180, 1181, 1182, 1183]),
@@ -971,7 +971,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(56, 108),
+"anchor": Vector2(40, 108),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1186, 1187, 1188, 1189, 1190, 1191]),
@@ -982,7 +982,7 @@ acts = {
 "terminated": false
 },
 "act07": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(40, 106),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1192, 1193, 1192]),
@@ -1004,7 +1004,7 @@ acts = {
 "terminated": true
 },
 "act09": {
-"anchor": Vector2(136, 96),
+"anchor": Vector2(24, 96),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1196, 1197, 1198, 1199]),
@@ -1015,7 +1015,7 @@ acts = {
 "terminated": true
 },
 "act10": {
-"anchor": Vector2(56, 106),
+"anchor": Vector2(88, 106),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1200, 1201]),
@@ -1026,7 +1026,7 @@ acts = {
 "terminated": true
 },
 "act11": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(40, 106),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1178, 1179, 1179, 1202]),
@@ -1048,7 +1048,7 @@ acts = {
 "terminated": true
 },
 "act13": {
-"anchor": Vector2(40, 110),
+"anchor": Vector2(46, 110),
 "cols": 7,
 "count": 7,
 "frames": Array[int]([1204, 1204, 1205, 1204, 1205, 1204, 1205]),
@@ -1059,7 +1059,7 @@ acts = {
 "terminated": true
 },
 "act14": {
-"anchor": Vector2(48, 106),
+"anchor": Vector2(40, 106),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1206, 1207, 1206, 1206, 1207, 1206]),
@@ -1070,7 +1070,7 @@ acts = {
 "terminated": true
 },
 "act15": {
-"anchor": Vector2(40, 112),
+"anchor": Vector2(46, 112),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([1204, 3278, 3279, 3280, 3281, 3282]),
@@ -1081,7 +1081,7 @@ acts = {
 "terminated": false
 },
 "act16": {
-"anchor": Vector2(48, 106),
+"anchor": Vector2(40, 106),
 "cols": 8,
 "count": 19,
 "frames": Array[int]([1206, 1206, 1207, 1206, 1206, 1207, 1206, 1206, 1207, 1206, 1206, 1207, 1206, 1206, 1207, 1206, 1206, 1207, 1206]),
@@ -1092,7 +1092,7 @@ acts = {
 "terminated": true
 },
 "act17": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(40, 106),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1192, 1193]),
@@ -1103,7 +1103,7 @@ acts = {
 "terminated": true
 },
 "act18": {
-"anchor": Vector2(136, 96),
+"anchor": Vector2(24, 96),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1196, 1197, 1198]),
@@ -1114,7 +1114,7 @@ acts = {
 "terminated": true
 },
 "act19": {
-"anchor": Vector2(32, 104),
+"anchor": Vector2(48, 104),
 "cols": 8,
 "count": 8,
 "frames": Array[int]([1236, 1237, 1238, 1239, 1180, 1181, 1182, 1183]),
@@ -1125,7 +1125,7 @@ acts = {
 "terminated": false
 },
 "act20": {
-"anchor": Vector2(88, 122),
+"anchor": Vector2(40, 122),
 "cols": 5,
 "count": 5,
 "frames": Array[int]([1184, 1185, 1186, 1192, 1193]),
@@ -1136,7 +1136,7 @@ acts = {
 "terminated": true
 },
 "act21": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(40, 106),
 "cols": 8,
 "count": 10,
 "frames": Array[int]([1172, 1192, 1193, 1172, 1192, 1193, 1172, 1192, 1193, 1172]),
@@ -1158,7 +1158,7 @@ acts = {
 "terminated": true
 },
 "act23": {
-"anchor": Vector2(56, 106),
+"anchor": Vector2(40, 106),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([1178, 1179]),
@@ -1169,7 +1169,7 @@ acts = {
 "terminated": true
 },
 "act24": {
-"anchor": Vector2(88, 106),
+"anchor": Vector2(40, 106),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([1178, 1179, 1179, 1202]),
@@ -1191,7 +1191,7 @@ acts = {
 "terminated": false
 },
 "act26": {
-"anchor": Vector2(56, 106),
+"anchor": Vector2(40, 106),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([1178, 1179, 1179]),

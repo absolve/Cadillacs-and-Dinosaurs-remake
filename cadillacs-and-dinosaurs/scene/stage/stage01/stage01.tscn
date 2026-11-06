@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scene/stage/stage01/stage01.gd" id="1_root"]
+[ext_resource type="Script" path="res://script/stage/stage_background.gd" id="2_bg"]
+[ext_resource type="PackedScene" path="res://scene/actor/player/jack.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scene/common/stage_camera.tscn" id="4_cam"]
+[ext_resource type="PackedScene" path="res://scene/ui/hud.tscn" id="5_hud"]
+
+[node name="Stage01" type="Node2D"]
+script = ExtResource("1_root")
+
+[node name="Backgrounds" type="Node2D" parent="."]
+script = ExtResource("2_bg")
+
+[node name="Actors" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Actors" instance=ExtResource("3_player")]
+position = Vector2(100, 147)
+
+[node name="StageCamera" parent="." instance=ExtResource("4_cam")]
+
+[node name="PlayerHud" parent="." instance=ExtResource("5_hud")]

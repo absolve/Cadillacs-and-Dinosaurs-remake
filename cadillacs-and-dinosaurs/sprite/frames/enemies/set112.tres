@@ -651,7 +651,7 @@ acts = {
 "terminated": false
 },
 "act03": {
-"anchor": Vector2(40, 48),
+"anchor": Vector2(56, 48),
 "cols": 6,
 "count": 6,
 "frames": Array[int]([2431, 2432, 2433, 2434, 2435, 2436]),
@@ -673,7 +673,7 @@ acts = {
 "terminated": false
 },
 "act05": {
-"anchor": Vector2(32, 114),
+"anchor": Vector2(24, 114),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2485, 2486, 2492]),
@@ -684,7 +684,7 @@ acts = {
 "terminated": true
 },
 "act06": {
-"anchor": Vector2(32, 114),
+"anchor": Vector2(24, 114),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2486, 2492]),
@@ -728,7 +728,7 @@ acts = {
 "terminated": true
 },
 "act10": {
-"anchor": Vector2(32, 80),
+"anchor": Vector2(48, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2493]),
@@ -750,7 +750,7 @@ acts = {
 "terminated": true
 },
 "act12": {
-"anchor": Vector2(40, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2495]),
@@ -761,7 +761,7 @@ acts = {
 "terminated": true
 },
 "act13": {
-"anchor": Vector2(72, 64),
+"anchor": Vector2(64, 64),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([2496, 2497, 2498, 2497]),
@@ -794,7 +794,7 @@ acts = {
 "terminated": true
 },
 "act16": {
-"anchor": Vector2(64, 112),
+"anchor": Vector2(16, 112),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2500, 2501, 2502]),
@@ -805,7 +805,7 @@ acts = {
 "terminated": true
 },
 "act17": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 4,
 "count": 4,
 "frames": Array[int]([2503, 2504, 2505, 2504]),
@@ -827,7 +827,7 @@ acts = {
 "terminated": true
 },
 "act19": {
-"anchor": Vector2(72, 80),
+"anchor": Vector2(32, 80),
 "cols": 3,
 "count": 3,
 "frames": Array[int]([2507, 2508, 2509]),
@@ -838,7 +838,7 @@ acts = {
 "terminated": true
 },
 "act20": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2510, 2511]),
@@ -849,7 +849,7 @@ acts = {
 "terminated": true
 },
 "act21": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(24, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2512, 2513]),
@@ -860,7 +860,7 @@ acts = {
 "terminated": true
 },
 "act22": {
-"anchor": Vector2(40, 80),
+"anchor": Vector2(32, 80),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2512, 2514]),
@@ -893,7 +893,7 @@ acts = {
 "terminated": true
 },
 "act25": {
-"anchor": Vector2(64, 80),
+"anchor": Vector2(40, 80),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2516]),
@@ -904,7 +904,7 @@ acts = {
 "terminated": true
 },
 "act26": {
-"anchor": Vector2(80, 83),
+"anchor": Vector2(24, 83),
 "cols": 2,
 "count": 2,
 "frames": Array[int]([2517, 2518]),
@@ -915,7 +915,7 @@ acts = {
 "terminated": true
 },
 "act27": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2519]),
@@ -926,7 +926,7 @@ acts = {
 "terminated": true
 },
 "act28": {
-"anchor": Vector2(48, 64),
+"anchor": Vector2(32, 64),
 "cols": 1,
 "count": 1,
 "frames": Array[int]([2520]),

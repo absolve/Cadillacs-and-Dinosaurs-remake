@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="CharacterStats" format=3]
+
+[ext_resource type="Script" uid="uid://beprw6mt0e7xf" path="res://script/data/move_data.gd" id="1_3kk7n"]
+[ext_resource type="Script" uid="uid://cgobtkjmdkse6" path="res://script/data/character_stats.gd" id="2_tvran"]
+
+[sub_resource type="Resource" id="Resource_m1atk"]
+script = ExtResource("1_3kk7n")
+start_anim = "g0/act03"
+hit_anim = "g1/act11"
+damage = 20
+
+[sub_resource type="Resource" id="Resource_m2atk"]
+script = ExtResource("1_3kk7n")
+id = &"attack2"
+action = &"attack2"
+start_anim = "g0/act06"
+hit_anim = "g1/act10"
+startup = 5
+damage = 22
+cancel_from = 9
+hitbox_rect = Rect2(10, -60, 28, 40)
+
+[sub_resource type="Resource" id="Resource_m3atk"]
+script = ExtResource("1_3kk7n")
+id = &"attack3"
+action = &"attack3"
+start_anim = "g1/act12"
+hit_anim = "g0/act13"
+startup = 8
+active = 5
+recovery = 16
+damage = 23
+knockdown = true
+cancel_from = 13
+hitbox_rect = Rect2(8, -62, 34, 44)
+
+[sub_resource type="Resource" id="Resource_mkick"]
+script = ExtResource("1_3kk7n")
+id = &"kick"
+action = &"kick"
+start_anim = "g1/act08"
+active = 10
+recovery = 8
+damage = 16
+cancel_from = 99
+hitbox_rect = Rect2(6, -46, 34, 30)
+
+[sub_resource type="Resource" id="Resource_mspec"]
+script = ExtResource("1_3kk7n")
+id = &"special"
+action = &"special"
+startup = 8
+active = 12
+recovery = 20
+damage = 20
+knockdown = true
+cancel_from = 20
+hitbox_rect = Rect2(2, -64, 40, 48)
+
+[resource]
+script = ExtResource("2_tvran")
+rom_id = 1
+display_name = "Mustapha"
+moves = Array[ExtResource("1_3kk7n")]([SubResource("Resource_m1atk"), SubResource("Resource_m2atk"), SubResource("Resource_m3atk"), SubResource("Resource_mkick"), SubResource("Resource_mspec")])
