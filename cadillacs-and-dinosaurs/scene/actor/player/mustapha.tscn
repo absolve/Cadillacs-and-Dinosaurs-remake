@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="PackedScene" uid="uid://booemc316ggt6" path="res://scene/actor/player/player.tscn" id="1_base"]
 [ext_resource type="Resource" path="res://script/data/mustapha_stats.tres" id="2_stats"]
@@ -9,7 +9,26 @@
 [ext_resource type="Resource" path="res://sprite/frames/players/02_mustapha/set009.tres" id="7_g3"]
 [ext_resource type="Resource" path="res://sprite/frames/players/02_mustapha/set010.tres" id="8_g4"]
 [ext_resource type="Resource" path="res://sprite/frames/players/02_mustapha/set011.tres" id="9_g5"]
+[ext_resource type="Script" path="res://script/core/player_mustapha.gd" id="10_player"]
+[ext_resource type="SpriteFrames" path="res://sprite/frames/players/mustapha_combined.tres" id="11_sprite_frames"]
+[ext_resource type="AnimationLibrary" path="res://scene/actor/player/mustapha_animation_library.tres" id="12_animations"]
+[ext_resource type="AnimationNodeStateMachine" path="res://scene/actor/player/mustapha_animation_tree.tres" id="13_animation_tree"]
 
 [node name="Mustapha" instance=ExtResource("1_base")]
+script = ExtResource("10_player")
 character_stats = ExtResource("2_stats")
 anim_groups = Array[ExtResource("3_setcls")]([ExtResource("4_g0"), ExtResource("5_g1"), ExtResource("6_g2"), ExtResource("7_g3"), ExtResource("8_g4"), ExtResource("9_g5")])
+
+[node name="Sprite" parent="Body"]
+sprite_frames = ExtResource("11_sprite_frames")
+animation = &"g0_act00"
+playing = true
+
+[node name="AnimationPlayer" parent="."]
+libraries = {
+&"": ExtResource("12_animations")
+}
+
+[node name="AnimationTree" parent="."]
+tree_root = ExtResource("13_animation_tree")
+active = true

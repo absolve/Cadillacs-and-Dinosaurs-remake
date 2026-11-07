@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://bv1fc5xqqvr0u"]
 
-[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_gdpif"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act00.png" id="2_en7qv"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act01.png" id="3_64051"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act02.png" id="4_3cjse"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set009/act03.png" id="5_vclua"]
+[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_gdpif"]
+[ext_resource type="Texture2D" uid="uid://dj4l17wxp42wd" path="res://sprite/players/02_mustapha/set009/act00.png" id="2_en7qv"]
+[ext_resource type="Texture2D" uid="uid://cxvvshuxe11hu" path="res://sprite/players/02_mustapha/set009/act01.png" id="3_64051"]
+[ext_resource type="Texture2D" uid="uid://ba64wfmmwx8ws" path="res://sprite/players/02_mustapha/set009/act02.png" id="4_3cjse"]
+[ext_resource type="Texture2D" uid="uid://bbxmuredefsa" path="res://sprite/players/02_mustapha/set009/act03.png" id="5_vclua"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj0ri"]
 atlas = ExtResource("2_en7qv")

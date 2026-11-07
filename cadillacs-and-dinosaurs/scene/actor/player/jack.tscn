@@ -1,15 +1,32 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://msp0y3cg8ef0"]
 
 [ext_resource type="PackedScene" uid="uid://booemc316ggt6" path="res://scene/actor/player/player.tscn" id="1_base"]
 [ext_resource type="Resource" uid="uid://bunp0yg16ukjt" path="res://script/data/jack_stats.tres" id="2_stats"]
 [ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="3_setcls"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set000.tres" id="4_g0"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set001.tres" id="5_g1"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set002.tres" id="6_g2"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set003.tres" id="7_g3"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set004.tres" id="8_g4"]
-[ext_resource type="Resource" path="res://sprite/frames/players/01_jack/set005.tres" id="9_g5"]
+[ext_resource type="Resource" uid="uid://blsj037ojd6ba" path="res://sprite/frames/players/01_jack/set000.tres" id="4_g0"]
+[ext_resource type="Resource" uid="uid://dkx7tuy21ornn" path="res://sprite/frames/players/01_jack/set001.tres" id="5_g1"]
+[ext_resource type="Resource" uid="uid://d20ysjvy4thbp" path="res://sprite/frames/players/01_jack/set002.tres" id="6_g2"]
+[ext_resource type="Resource" uid="uid://cs3d2csgo5dh5" path="res://sprite/frames/players/01_jack/set003.tres" id="7_g3"]
+[ext_resource type="Resource" uid="uid://bft0xv70olxw6" path="res://sprite/frames/players/01_jack/set004.tres" id="8_g4"]
+[ext_resource type="Resource" uid="uid://db5l7h7jnivas" path="res://sprite/frames/players/01_jack/set005.tres" id="9_g5"]
+[ext_resource type="Script" uid="uid://bhq16p44pps5" path="res://script/core/player_jack.gd" id="10_player"]
+[ext_resource type="SpriteFrames" uid="uid://bxb6psahgv0sa" path="res://sprite/frames/players/jack_combined.tres" id="11_sprite_frames"]
+[ext_resource type="AnimationLibrary" uid="uid://cwps4eqivbd14" path="res://scene/actor/player/jack_animation_library.tres" id="12_animations"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://h5qjqot0jk8r" path="res://scene/actor/player/jack_animation_tree.tres" id="13_animation_tree"]
 
-[node name="Jack" instance=ExtResource("1_base")]
+[node name="Jack" unique_id=1226823429 instance=ExtResource("1_base")]
+script = ExtResource("10_player")
 character_stats = ExtResource("2_stats")
 anim_groups = Array[ExtResource("3_setcls")]([ExtResource("4_g0"), ExtResource("5_g1"), ExtResource("6_g2"), ExtResource("7_g3"), ExtResource("8_g4"), ExtResource("9_g5")])
+
+[node name="Sprite" parent="Body" parent_id_path=PackedInt32Array(2024753829) index="0" unique_id=1400919236]
+sprite_frames = ExtResource("11_sprite_frames")
+animation = &"g5_act05"
+offset = Vector2(-24, -96)
+
+[node name="AnimationPlayer" parent="." index="3" unique_id=1190365637]
+libraries/ = ExtResource("12_animations")
+
+[node name="AnimationTree" parent="." index="4" unique_id=1909303575]
+active = true
+tree_root = ExtResource("13_animation_tree")

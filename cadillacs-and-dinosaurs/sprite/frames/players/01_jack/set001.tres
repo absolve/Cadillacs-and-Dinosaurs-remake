@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://dkx7tuy21ornn"]
 
-[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_4iaac"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act00.png" id="2_8cnpc"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act03.png" id="3_g67d5"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act04.png" id="4_q7mhc"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act08.png" id="5_d62m8"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act10.png" id="6_fpn70"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act12.png" id="7_sicqd"]
-[ext_resource type="Texture2D" path="res://sprite/players/01_jack/set001/act14.png" id="8_t2ou8"]
+[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_4iaac"]
+[ext_resource type="Texture2D" uid="uid://cgjr2tsjpbdm0" path="res://sprite/players/01_jack/set001/act00.png" id="2_8cnpc"]
+[ext_resource type="Texture2D" uid="uid://dcqrlogqukivy" path="res://sprite/players/01_jack/set001/act03.png" id="3_g67d5"]
+[ext_resource type="Texture2D" uid="uid://d1bkxbppogump" path="res://sprite/players/01_jack/set001/act04.png" id="4_q7mhc"]
+[ext_resource type="Texture2D" uid="uid://b3igclqgut6os" path="res://sprite/players/01_jack/set001/act08.png" id="5_d62m8"]
+[ext_resource type="Texture2D" uid="uid://njkqxpyjobdo" path="res://sprite/players/01_jack/set001/act10.png" id="6_fpn70"]
+[ext_resource type="Texture2D" uid="uid://beb6fms1amw7b" path="res://sprite/players/01_jack/set001/act12.png" id="7_sicqd"]
+[ext_resource type="Texture2D" uid="uid://b63nlhvw3a43w" path="res://sprite/players/01_jack/set001/act14.png" id="8_t2ou8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbxqo"]
 atlas = ExtResource("2_8cnpc")

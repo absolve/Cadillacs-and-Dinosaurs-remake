@@ -1,0 +1,401 @@
+[gd_resource type="AnimationLibrary" format=3 uid="uid://bcdvs658ckoed"]
+
+[sub_resource type="Animation" id="attack1"]
+resource_name = "attack1"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"attack1"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="attack2"]
+resource_name = "attack2"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"attack2"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="attack3"]
+resource_name = "attack3"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"attack3"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="custom"]
+resource_name = "custom"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_pending_anim_ref"
+}]
+}
+
+[sub_resource type="Animation" id="dash_attack"]
+resource_name = "dash_attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"dash_attack"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="die"]
+resource_name = "die"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"die"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="down"]
+resource_name = "down"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"down"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="fall"]
+resource_name = "fall"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"fall"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="grab"]
+resource_name = "grab"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"grab"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="grab_hold"]
+resource_name = "grab_hold"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"grab_hold"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="hurt"]
+resource_name = "hurt"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"hurt"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="idle"]
+resource_name = "idle"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="jump"]
+resource_name = "jump"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"jump"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="kick"]
+resource_name = "kick"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"kick"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="rise"]
+resource_name = "rise"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"rise"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="roll"]
+resource_name = "roll"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"roll"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="run"]
+resource_name = "run"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"run"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="stunned"]
+resource_name = "stunned"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"stunned"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="throw"]
+resource_name = "throw"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"throw"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="thrown"]
+resource_name = "thrown"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"thrown"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="victory"]
+resource_name = "victory"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"victory"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[sub_resource type="Animation" id="walk"]
+resource_name = "walk"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"walk"],
+"method": &"_play_action_from_tree"
+}]
+}
+
+[resource]
+_data = {
+&"attack1": SubResource("attack1"),
+&"attack2": SubResource("attack2"),
+&"attack3": SubResource("attack3"),
+&"custom": SubResource("custom"),
+&"dash_attack": SubResource("dash_attack"),
+&"die": SubResource("die"),
+&"down": SubResource("down"),
+&"fall": SubResource("fall"),
+&"grab": SubResource("grab"),
+&"grab_hold": SubResource("grab_hold"),
+&"hurt": SubResource("hurt"),
+&"idle": SubResource("idle"),
+&"jump": SubResource("jump"),
+&"kick": SubResource("kick"),
+&"rise": SubResource("rise"),
+&"roll": SubResource("roll"),
+&"run": SubResource("run"),
+&"stunned": SubResource("stunned"),
+&"throw": SubResource("throw"),
+&"thrown": SubResource("thrown"),
+&"victory": SubResource("victory"),
+&"walk": SubResource("walk")
+}

@@ -1,0 +1,83 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=17 format=3]
+
+[sub_resource type="AnimationNodeAnimation" id="stand"]
+animation = &"stand"
+
+[sub_resource type="AnimationNodeAnimation" id="move"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="run"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="jump"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="combo"]
+animation = &"combo"
+
+[sub_resource type="AnimationNodeAnimation" id="combo2"]
+animation = &"combo2"
+
+[sub_resource type="AnimationNodeAnimation" id="dash_attack"]
+animation = &"dash_attack"
+
+[sub_resource type="AnimationNodeAnimation" id="flying_kick"]
+animation = &"flying_kick"
+
+[sub_resource type="AnimationNodeAnimation" id="grab_attack"]
+animation = &"grab_attack"
+
+[sub_resource type="AnimationNodeAnimation" id="throw"]
+animation = &"throw"
+
+[sub_resource type="AnimationNodeAnimation" id="rolling_elbow_smash"]
+animation = &"rolling_elbow_smash"
+
+[sub_resource type="AnimationNodeAnimation" id="homing_kick"]
+animation = &"homing_kick"
+
+[sub_resource type="AnimationNodeAnimation" id="special_attack"]
+animation = &"special_attack"
+
+[sub_resource type="AnimationNodeAnimation" id="team_move"]
+animation = &"team_move"
+
+[sub_resource type="AnimationNodeStart" id="Start"]
+
+[sub_resource type="AnimationNodeEnd" id="End"]
+
+[resource]
+states/mess_stand/node = SubResource("stand")
+states/mess_stand/position = Vector2(200, 100)
+states/mess_move/node = SubResource("move")
+states/mess_move/position = Vector2(340, 100)
+states/mess_run/node = SubResource("run")
+states/mess_run/position = Vector2(480, 100)
+states/mess_jump/node = SubResource("jump")
+states/mess_jump/position = Vector2(620, 100)
+states/mess_combo/node = SubResource("combo")
+states/mess_combo/position = Vector2(760, 100)
+states/mess_combo2/node = SubResource("combo2")
+states/mess_combo2/position = Vector2(900, 100)
+states/mess_dash_attack/node = SubResource("dash_attack")
+states/mess_dash_attack/position = Vector2(200, 200)
+states/mess_flying_kick/node = SubResource("flying_kick")
+states/mess_flying_kick/position = Vector2(340, 200)
+states/mess_grab_attack/node = SubResource("grab_attack")
+states/mess_grab_attack/position = Vector2(480, 200)
+states/mess_throw/node = SubResource("throw")
+states/mess_throw/position = Vector2(620, 200)
+states/mess_rolling_elbow_smash/node = SubResource("rolling_elbow_smash")
+states/mess_rolling_elbow_smash/position = Vector2(760, 200)
+states/mess_homing_kick/node = SubResource("homing_kick")
+states/mess_homing_kick/position = Vector2(900, 200)
+states/mess_special_attack/node = SubResource("special_attack")
+states/mess_special_attack/position = Vector2(200, 300)
+states/mess_team_move/node = SubResource("team_move")
+states/mess_team_move/position = Vector2(340, 300)
+states/Start/node = SubResource("Start")
+states/Start/position = Vector2(40, 100)
+states/End/node = SubResource("End")
+states/End/position = Vector2(1100, 100)
+start_node = "mess_stand"
+end_node = "End"

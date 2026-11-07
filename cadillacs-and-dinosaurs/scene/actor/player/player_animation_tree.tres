@@ -1,0 +1,121 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://r2kflwfgxbxh"]
+
+[sub_resource type="AnimationNodeStart" id="Start"]
+
+[sub_resource type="AnimationNodeEnd" id="End"]
+
+[sub_resource type="AnimationNodeAnimation" id="attack1"]
+animation = &"attack1"
+
+[sub_resource type="AnimationNodeAnimation" id="attack2"]
+animation = &"attack2"
+
+[sub_resource type="AnimationNodeAnimation" id="attack3"]
+animation = &"attack3"
+
+[sub_resource type="AnimationNodeAnimation" id="custom"]
+animation = &"custom"
+
+[sub_resource type="AnimationNodeAnimation" id="dash_attack"]
+animation = &"dash_attack"
+
+[sub_resource type="AnimationNodeAnimation" id="die"]
+animation = &"die"
+
+[sub_resource type="AnimationNodeAnimation" id="down"]
+animation = &"down"
+
+[sub_resource type="AnimationNodeAnimation" id="fall"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="grab"]
+animation = &"grab"
+
+[sub_resource type="AnimationNodeAnimation" id="grab_hold"]
+animation = &"grab_hold"
+
+[sub_resource type="AnimationNodeAnimation" id="hurt"]
+animation = &"hurt"
+
+[sub_resource type="AnimationNodeAnimation" id="idle"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="jump"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="kick"]
+animation = &"kick"
+
+[sub_resource type="AnimationNodeAnimation" id="rise"]
+animation = &"rise"
+
+[sub_resource type="AnimationNodeAnimation" id="roll"]
+animation = &"roll"
+
+[sub_resource type="AnimationNodeAnimation" id="run"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="stunned"]
+animation = &"stunned"
+
+[sub_resource type="AnimationNodeAnimation" id="throw"]
+animation = &"throw"
+
+[sub_resource type="AnimationNodeAnimation" id="thrown"]
+animation = &"thrown"
+
+[sub_resource type="AnimationNodeAnimation" id="victory"]
+animation = &"victory"
+
+[sub_resource type="AnimationNodeAnimation" id="walk"]
+animation = &"walk"
+
+[resource]
+states/End/node = SubResource("End")
+states/End/position = Vector2(1820, 160)
+states/Start/node = SubResource("Start")
+states/Start/position = Vector2(100, 160)
+states/attack1/node = SubResource("attack1")
+states/attack1/position = Vector2(280, 220)
+states/attack2/node = SubResource("attack2")
+states/attack2/position = Vector2(420, 220)
+states/attack3/node = SubResource("attack3")
+states/attack3/position = Vector2(560, 220)
+states/custom/node = SubResource("custom")
+states/custom/position = Vector2(1680, 220)
+states/dash_attack/node = SubResource("dash_attack")
+states/dash_attack/position = Vector2(980, 100)
+states/die/node = SubResource("die")
+states/die/position = Vector2(1400, 220)
+states/down/node = SubResource("down")
+states/down/position = Vector2(1120, 220)
+states/fall/node = SubResource("fall")
+states/fall/position = Vector2(840, 100)
+states/grab/node = SubResource("grab")
+states/grab/position = Vector2(1400, 100)
+states/grab_hold/node = SubResource("grab_hold")
+states/grab_hold/position = Vector2(1540, 100)
+states/hurt/node = SubResource("hurt")
+states/hurt/position = Vector2(840, 220)
+states/idle/node = SubResource("idle")
+states/idle/position = Vector2(280, 100)
+states/jump/node = SubResource("jump")
+states/jump/position = Vector2(700, 100)
+states/kick/node = SubResource("kick")
+states/kick/position = Vector2(700, 220)
+states/rise/node = SubResource("rise")
+states/rise/position = Vector2(1260, 220)
+states/roll/node = SubResource("roll")
+states/roll/position = Vector2(1120, 100)
+states/run/node = SubResource("run")
+states/run/position = Vector2(560, 100)
+states/stunned/node = SubResource("stunned")
+states/stunned/position = Vector2(980, 220)
+states/throw/node = SubResource("throw")
+states/throw/position = Vector2(1540, 220)
+states/thrown/node = SubResource("thrown")
+states/thrown/position = Vector2(1260, 100)
+states/victory/node = SubResource("victory")
+states/victory/position = Vector2(1680, 100)
+states/walk/node = SubResource("walk")
+states/walk/position = Vector2(420, 100)

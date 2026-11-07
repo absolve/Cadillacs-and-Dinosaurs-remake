@@ -30,7 +30,8 @@ export_presets.cfg
 build/*
 !build/.gitkeep
 /tools
-/cadillacs-and-dinosaurs/tools
+/cadillacs-and-dinosaurs/tools/*
+!/cadillacs-and-dinosaurs/tools/build_player_animations.py
 
 # Sprite 翻转工具的幂等标记（本地状态，不入库）
 cadillacs-and-dinosaurs/sprite/.facing_right_flipped.json

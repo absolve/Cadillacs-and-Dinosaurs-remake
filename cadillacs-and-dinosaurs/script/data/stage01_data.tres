@@ -1,19 +1,18 @@
-[gd_resource type="Resource" script_class="StageData" format=3]
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://cfc2x55nhdh7d"]
 
-[ext_resource type="Script" path="res://script/data/spawn_record.gd" id="1_sr"]
-[ext_resource type="Script" path="res://script/data/area_data.gd" id="2_ad"]
-[ext_resource type="Script" path="res://script/data/stage_data.gd" id="3_sd"]
+[ext_resource type="Script" uid="uid://cw4w42ey7a64x" path="res://script/data/spawn_record.gd" id="1_sr"]
+[ext_resource type="Script" uid="uid://bxm3wu7gccvv5" path="res://script/data/area_data.gd" id="2_ad"]
+[ext_resource type="Script" uid="uid://uqtf8rvohecq" path="res://script/data/stage_data.gd" id="3_sd"]
 [ext_resource type="PackedScene" path="res://scene/actor/enemy/enemy.tscn" id="4_enemy"]
-[ext_resource type="Texture2D" path="res://sprite/backgrounds/L1_S1_layer2.png" id="5_s1"]
-[ext_resource type="Texture2D" path="res://sprite/backgrounds/L1_S2_layer2.png" id="6_s2"]
-[ext_resource type="Texture2D" path="res://sprite/backgrounds/L1_S4_layer2.png" id="8_s4f"]
-[ext_resource type="Texture2D" path="res://sprite/backgrounds/L1_S4_layer3.png" id="9_s4n"]
+[ext_resource type="Texture2D" uid="uid://bmfd4hq5ov3f8" path="res://sprite/backgrounds/L1_S1_layer2.png" id="5_s1"]
+[ext_resource type="Texture2D" uid="uid://bvql367uon728" path="res://sprite/backgrounds/L1_S2_layer2.png" id="6_s2"]
+[ext_resource type="Texture2D" uid="uid://cytlayugagwji" path="res://sprite/backgrounds/L1_S4_layer2.png" id="8_s4f"]
+[ext_resource type="Texture2D" uid="uid://bwprlm2x4ts7h" path="res://sprite/backgrounds/L1_S4_layer3.png" id="9_s4n"]
 
 [sub_resource type="Resource" id="SpawnRecord_l1a_g1"]
 script = ExtResource("1_sr")
 trigger_x = 920.0
 locks_screen = true
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(1050, 120)
 
@@ -21,7 +20,6 @@ spawn_pos = Vector2(1050, 120)
 script = ExtResource("1_sr")
 trigger_x = 920.0
 locks_screen = true
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(1100, 130)
 
@@ -29,7 +27,6 @@ spawn_pos = Vector2(1100, 130)
 script = ExtResource("1_sr")
 trigger_x = 1300.0
 count_flag = 4
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(1500, 120)
 
@@ -37,7 +34,6 @@ spawn_pos = Vector2(1500, 120)
 script = ExtResource("1_sr")
 trigger_x = 1600.0
 locks_screen = true
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(1750, 140)
 
@@ -45,34 +41,29 @@ spawn_pos = Vector2(1750, 140)
 script = ExtResource("1_sr")
 trigger_x = 2100.0
 count_flag = 8
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(2240, 120)
+
+[sub_resource type="Resource" id="AreaData_1A"]
+script = ExtResource("2_ad")
+force_shift = 188
+spawn_records = Array[ExtResource("1_sr")]([SubResource("SpawnRecord_l1a_g1"), SubResource("SpawnRecord_l1a_g1b"), SubResource("SpawnRecord_l1a_p2"), SubResource("SpawnRecord_l1a_g2"), SubResource("SpawnRecord_l1a_p4")])
+far_backgrounds = Array[Texture2D]([ExtResource("5_s1")])
 
 [sub_resource type="Resource" id="SpawnRecord_l1b_g1"]
 script = ExtResource("1_sr")
 trigger_x = 200.0
 locks_screen = true
-object_id = &"ferris"
 scene = ExtResource("4_enemy")
 spawn_pos = Vector2(400, 60)
-
-[sub_resource type="Resource" id="AreaData_1A"]
-script = ExtResource("2_ad")
-rom_name = &"level1A"
-size = Vector2(2268, 300)
-walk_band_y = Vector2(100, 147)
-force_shift = 188
-far_backgrounds = Array[Texture2D]([ExtResource("5_s1")])
-spawn_records = Array[ExtResource("1_sr")]([SubResource("SpawnRecord_l1a_g1"), SubResource("SpawnRecord_l1a_g1b"), SubResource("SpawnRecord_l1a_p2"), SubResource("SpawnRecord_l1a_g2"), SubResource("SpawnRecord_l1a_p4")])
 
 [sub_resource type="Resource" id="AreaData_1B"]
 script = ExtResource("2_ad")
 rom_name = &"level1B"
 size = Vector2(1528, 224)
 walk_band_y = Vector2(16, 79)
-far_backgrounds = Array[Texture2D]([ExtResource("6_s2")])
 spawn_records = Array[ExtResource("1_sr")]([SubResource("SpawnRecord_l1b_g1")])
+far_backgrounds = Array[Texture2D]([ExtResource("6_s2")])
 
 [sub_resource type="Resource" id="AreaData_1C"]
 script = ExtResource("2_ad")
@@ -85,6 +76,4 @@ near_backgrounds = Array[Texture2D]([ExtResource("9_s4n")])
 
 [resource]
 script = ExtResource("3_sd")
-stage_number = 1
-display_name = "City in the Sea"
 areas = Array[ExtResource("2_ad")]([SubResource("AreaData_1A"), SubResource("AreaData_1B"), SubResource("AreaData_1C")])

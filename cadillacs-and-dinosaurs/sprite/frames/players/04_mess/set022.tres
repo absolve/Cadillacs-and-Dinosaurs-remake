@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://dh3dg11ahkkd7"]
 
-[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_klxpq"]
-[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set022/act00.png" id="2_ievwd"]
-[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set022/act01.png" id="3_drtym"]
-[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set022/act02.png" id="4_7br65"]
-[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set022/act03.png" id="5_mkdgn"]
-[ext_resource type="Texture2D" path="res://sprite/players/04_mess/set022/act08.png" id="6_x3w06"]
+[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_klxpq"]
+[ext_resource type="Texture2D" uid="uid://dyk70berkyso2" path="res://sprite/players/04_mess/set022/act00.png" id="2_ievwd"]
+[ext_resource type="Texture2D" uid="uid://c5yoenvgqebb1" path="res://sprite/players/04_mess/set022/act01.png" id="3_drtym"]
+[ext_resource type="Texture2D" uid="uid://ccjkvcrtwd437" path="res://sprite/players/04_mess/set022/act02.png" id="4_7br65"]
+[ext_resource type="Texture2D" uid="uid://6qssut8rbccv" path="res://sprite/players/04_mess/set022/act03.png" id="5_mkdgn"]
+[ext_resource type="Texture2D" uid="uid://b14xse7jhu45i" path="res://sprite/players/04_mess/set022/act08.png" id="6_x3w06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rp751"]
 atlas = ExtResource("2_ievwd")

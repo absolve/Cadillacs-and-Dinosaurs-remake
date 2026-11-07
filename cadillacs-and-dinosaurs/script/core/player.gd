@@ -9,6 +9,29 @@ class_name Player
 const GROUP: StringName = &"players"
 ## 输入缓冲窗口（帧）`[推定]`，见 doc/07 §输入缓冲
 const BUFFER_FRAMES: int = 12
+const REFERENCE_ANIMATIONS: Dictionary = {
+	"0/act00": &"stand",
+	"0/act01": &"move",
+	"0/act03": &"combo",
+	"0/act06": &"combo2",
+	"0/act07": &"stand",
+	"0/act09": &"run",
+	"0/act12": &"stand",
+	"0/act13": &"stand",
+	"0/act20": &"rolling_elbow_smash",
+	"0/act26": &"throw",
+	"0/act27": &"dash_attack",
+	"1/act00": &"jump",
+	"1/act02": &"jump",
+	"1/act08": &"flying_kick",
+	"1/act10": &"combo2",
+	"1/act11": &"combo",
+	"1/act12": &"combo2",
+	"2/act00": &"grab_attack",
+	"2/act02": &"throw",
+	"3/act03": &"stand",
+	"5/act12": &"grab_attack",
+}
 
 ## 第几位玩家（0 基），决定按键前缀
 @export var player_index: int = 0
@@ -44,6 +67,45 @@ func _apply_stats() -> void:
 	gravity = character_stats.gravity
 	power = character_stats.power
 	moves = character_stats.moves
+
+
+func play_action(action: StringName) -> StringName:
+	return _play_animation_state(ref_of(action))
+
+
+func play_anim_ref(ref: String) -> StringName:
+	return _play_animation_state(ref_or_empty(ref))
+
+
+func animation_state_for_ref(ref: String) -> StringName:
+	var parts := FightObject.split_anim_ref(ref)
+	return StringName("g%d_%s" % [int(parts[0]), String(parts[1])])
+
+
+func animation_clip_for_ref(ref: String) -> StringName:
+	var parts := FightObject.split_anim_ref(ref)
+	var key := "%d/%s" % [int(parts[0]), String(parts[1])]
+	return StringName(REFERENCE_ANIMATIONS.get(key, &"unmapped"))
+
+
+func _play_animation_state(ref: String) -> StringName:
+	if ref == "":
+		return &""
+	var state_name := animation_state_for_ref(ref)
+	var animation_states: AnimationNodeStateMachine
+	if animation_tree != null:
+		animation_states = animation_tree.tree_root as AnimationNodeStateMachine
+	var playback := _animation_playback()
+	if animation_states == null or playback == null:
+		push_error("%s: player animation tree is missing or inactive" % name)
+		return &""
+	if not animation_states.has_node(state_name):
+		push_error("%s: animation tree has no state '%s' for '%s'" % [name, state_name, ref])
+		return &""
+	if playback.get_current_node() != state_name:
+		playback.start(state_name, true)
+	var parts := FightObject.split_anim_ref(ref)
+	return StringName(String(parts[1]))
 
 
 func _physics_process(_delta: float) -> void:

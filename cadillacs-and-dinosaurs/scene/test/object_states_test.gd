@@ -60,7 +60,7 @@ func _ready() -> void:
 	await test_player_hurt_knockback()
 	await test_enemy_death()
 	await test_slow_motion()
-	await test_i18n()
+	test_i18n()
 	print("===================================================")
 	if failed == 0:
 		print("✅ 全部 %d 项断言通过" % checked)
@@ -83,31 +83,103 @@ func test_roster_animations() -> void:
 		var unit: Player = scene.instantiate()
 		actors.add_child(unit)
 		await frames(2)
-		var name := unit.character_stats.display_name
-		check(unit.sprite.sprite_frames != null, "%s 挂上了动画集（%s）" % [name, unit.set_of_group(0).sheet_dir])
-		check(unit.anim_groups.size() >= 6, "%s 按组挂了 6 个动画集（组 0..5）" % name)
+		var character_name := unit.character_stats.display_name
+		check(unit.sprite.sprite_frames != null, "%s 挂上了动画集（%s）" % [character_name, unit.set_of_group(0).sheet_dir])
+		check(unit.anim_groups.size() >= 6, "%s 按组挂了 6 个动画集（组 0..5）" % character_name)
 		check(unit.set_of_group(1) != null and unit.set_of_group(5) != null,
-				"%s 的攻击组（组 1）与单帧姿态组（组 5）都在位" % name)
+				"%s 的攻击组（组 1）与单帧姿态组（组 5）都在位" % character_name)
+		var animation_tree := unit.get_node_or_null("AnimationTree") as AnimationTree
+		var animation_player := unit.get_node_or_null("AnimationPlayer") as AnimationPlayer
+		var animation_states: AnimationNodeStateMachine
+		if animation_tree != null:
+			animation_states = animation_tree.tree_root as AnimationNodeStateMachine
+		check(animation_tree != null and animation_tree.active and animation_player != null,
+				"%s 使用共享 AnimationPlayer / AnimationTree" % character_name)
+		if animation_player != null:
+			var semantic_animation_names := [
+				"stand", "move", "run", "jump", "combo", "combo2",
+				"dash_attack", "flying_kick", "grab_attack", "throw",
+				"rolling_elbow_smash", "homing_kick", "special_attack", "team_move",
+			]
+			var missing_semantic_animations: Array[String] = []
+			for animation_name in semantic_animation_names:
+				if not animation_player.has_animation(StringName(animation_name)) \
+						or animation_name != animation_name.to_lower():
+					missing_semantic_animations.append(animation_name)
+			check(missing_semantic_animations.is_empty(),
+					"%s 的语义动画名称均存在且为小写（缺 %s）"
+					% [character_name, ", ".join(missing_semantic_animations)])
+			var unexpected_semantic_animations: Array[String] = []
+			for animation_name in animation_player.get_animation_list():
+				if String(animation_name) not in semantic_animation_names:
+					unexpected_semantic_animations.append(String(animation_name))
+			check(unexpected_semantic_animations.is_empty(),
+					"%s 的 AnimationPlayer 只保留语义动画（多余 %s）"
+					% [character_name, ", ".join(unexpected_semantic_animations)])
+		check(unit.sprite.sprite_frames != null
+				and unit.sprite.sprite_frames != unit.set_of_group(0).sprite_frames
+				and unit.sprite.sprite_frames.has_animation("g1_act11"),
+				"%s 场景直接配置了包含跨组动作的 SpriteFrames" % character_name)
+		if animation_tree != null and animation_player != null:
+			var walk_ref := unit.ref_of(&"walk")
+			var walk_parts := FightObject.split_anim_ref(walk_ref)
+			var walk_sprite_clip := "%s_%s" % [walk_parts[0], walk_parts[1]]
+			var walk_clip := String(unit.animation_clip_for_ref(walk_ref))
+			check(animation_states != null
+					and animation_states.has_node(unit.animation_state_for_ref(walk_ref))
+					and animation_player.has_animation(StringName(walk_clip))
+					and unit.sprite.sprite_frames.has_animation(walk_sprite_clip),
+					"%s 的场景资源配置了行走状态、动画片段与 SpriteFrames" % character_name)
+			unit.play_action(&"walk")
+			await frames(2)
+			check(unit.anim_ref() == unit.ref_of(&"walk") and unit.sprite.is_playing(),
+					"%s 由 AnimationTree 驱动行走动画" % character_name)
 		var missing: Array[String] = []
+		var unconfigured: Array[String] = []
 		for action in unit.act_map.keys():
-			if unit.ref_of(StringName(action)) == "":
+			var ref := unit.ref_of(StringName(action))
+			if ref == "":
 				missing.append("%s->%s" % [action, unit.act_map[action]])
+				continue
+			var parts := FightObject.split_anim_ref(ref)
+			var clip: StringName = unit.animation_clip_for_ref(ref)
+			var sprite_clip := "%s_%s" % [parts[0], parts[1]]
+			if animation_states == null or animation_player == null \
+					or not animation_player.has_animation(clip) \
+					or not animation_states.has_node(unit.animation_state_for_ref(ref)) \
+					or not unit.sprite.sprite_frames.has_animation(sprite_clip):
+				unconfigured.append("%s->%s" % [action, ref])
 		check(missing.is_empty(),
-				"%s 的 act_map 全部命中（%d 个键，缺 %s）" % [name, unit.act_map.size(), ", ".join(missing)])
+				"%s 的 act_map 全部命中（%d 个键，缺 %s）"
+				% [character_name, unit.act_map.size(), ", ".join(missing)])
+		check(unconfigured.is_empty(),
+				"%s 的动作映射都有场景动画资源（缺 %s）"
+				% [character_name, ", ".join(unconfigured)])
 		# 招式两段式：起手与命中分属不同动画组（doc/10 §8.11 结论 3）
 		var phase_missing: Array[String] = []
 		for move in unit.character_stats.moves:
 			for ref: String in [move.start_anim, move.hit_anim]:
 				if ref != "" and unit.ref_or_empty(ref) == "":
 					phase_missing.append("%s:%s" % [move.id, ref])
+				elif ref != "":
+					var parts := FightObject.split_anim_ref(ref)
+					var clip: StringName = unit.animation_clip_for_ref(ref)
+					var sprite_clip := "%s_%s" % [parts[0], parts[1]]
+					if animation_player == null or animation_states == null \
+							or not animation_player.has_animation(clip) \
+							or not animation_states.has_node(unit.animation_state_for_ref(ref)) \
+							or not unit.sprite.sprite_frames.has_animation(sprite_clip):
+						phase_missing.append("%s:%s（缺动画资源）" % [move.id, ref])
 		check(phase_missing.is_empty(),
-				"%s 的招式起手段 / 命中段全部存在（缺 %s）" % [name, ", ".join(phase_missing)])
+				"%s 的招式起手段 / 命中段全部存在（缺 %s）"
+				% [character_name, ", ".join(phase_missing)])
 		var first := unit.move_of(&"attack1")
 		check(first != null and first.start_anim != "" and first.hit_anim != ""
 				and FightObject.split_anim_ref(first.start_anim)[0] != FightObject.split_anim_ref(first.hit_anim)[0],
-				"%s attack1 的起手 / 命中两段跨动画组（%s → %s）" % [name, first.start_anim, first.hit_anim])
+				"%s attack1 的起手 / 命中两段跨动画组（%s → %s）"
+				% [character_name, first.start_anim, first.hit_anim])
 		check(unit.set_of_group(0).rom_addr != "", "%s 记录了组 0 的 ROM 动画表地址 %s"
-				% [name, unit.set_of_group(0).rom_addr])
+				% [character_name, unit.set_of_group(0).rom_addr])
 		unit.queue_free()
 		await frames(2)
 

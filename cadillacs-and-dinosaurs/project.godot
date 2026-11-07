@@ -30,10 +30,6 @@ window/size/window_height_override=672
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
-[internationalization]
-
-rendering/translations=PackedStringArray("res://lang/translations.en.translation", "res://lang/translations.zh_CN.translation")
-
 [input]
 
 pause={
@@ -192,6 +188,10 @@ p4_jump={
 "events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":89,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ])
 }
+
+[internationalization]
+
+rendering/translations=PackedStringArray("res://lang/translations.en.translation", "res://lang/translations.zh_CN.translation")
 
 [layer_names]
 

@@ -102,11 +102,12 @@ var is_dead: bool = false
 var invincible_left: int = 0
 ## 不吃击倒 / 眩晕但仍吃伤害的剩余帧数
 var knockdown_immune_left: int = 0
-## 当前正在显示的动画集（= 某个 `anim_groups[i]`），由 `play_anim_ref` 维护
+## 当前正在显示的动画集（= 某个 `anim_groups[i]`），供直接播放路径记录
 var active_set: DinoAnimSet
 
 @onready var body: Node2D = $Body
 @onready var sprite: AnimatedSprite2D = $Body/Sprite
+@onready var animation_tree: AnimationTree = get_node_or_null("AnimationTree") as AnimationTree
 @onready var hitbox: Area2D = $Body/Hitbox
 @onready var hurtbox: Area2D = $Body/Hurtbox
 @onready var hitbox_shape: CollisionShape2D = $Body/Hitbox/Shape
@@ -193,8 +194,9 @@ func set_of_group(group: int) -> DinoAnimSet:
 ## 校验并规范化引用：段真的挂在本对象上时返回 `"gN/actMM"`，否则返回空串
 func ref_or_empty(ref: String) -> String:
 	var parts := split_anim_ref(ref)
-	var set := set_of_group(int(parts[0]))
-	if set == null or set.sprite_frames == null or not set.sprite_frames.has_animation(String(parts[1])):
+	var anim_set := set_of_group(int(parts[0]))
+	if anim_set == null or anim_set.sprite_frames == null \
+			or not anim_set.sprite_frames.has_animation(String(parts[1])):
 		return ""
 	return "g%d/%s" % [int(parts[0]), String(parts[1])]
 
@@ -207,9 +209,9 @@ func ref_of(action: StringName) -> String:
 		if resolved != "":
 			return resolved
 	for group: int in anim_groups.size():
-		var set := set_of_group(group)
-		if set != null and set.sprite_frames != null:
-			var names := set.sprite_frames.get_animation_names()
+		var anim_set := set_of_group(group)
+		if anim_set != null and anim_set.sprite_frames != null:
+			var names := anim_set.sprite_frames.get_animation_names()
 			if names.size() > 0:
 				return "g%d/%s" % [group, names[0]]
 	return ""
@@ -217,9 +219,13 @@ func ref_of(action: StringName) -> String:
 
 ## 当前正在播放的动画引用（调试与断言用）
 func anim_ref() -> String:
+	var combined_parts := sprite.animation.split("_", false, 1)
+	if combined_parts.size() == 2 and combined_parts[0].begins_with("g") \
+			and combined_parts[0].substr(1).is_valid_int():
+		return "%s/%s" % [combined_parts[0], combined_parts[1]]
 	for group: int in anim_groups.size():
-		var set := set_of_group(group)
-		if set != null and set.sprite_frames == sprite.sprite_frames:
+		var set1 := set_of_group(group)
+		if set1 != null and set1.sprite_frames == sprite.sprite_frames:
 			return "g%d/%s" % [group, sprite.animation]
 	return "g?/%s" % sprite.animation
 
@@ -228,29 +234,56 @@ func has_action(action: StringName) -> bool:
 	return ref_of(action) != ""
 
 
+func _animation_playback() -> AnimationNodeStateMachinePlayback:
+	if animation_tree == null or not animation_tree.active:
+		return null
+	return animation_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
+
+
+## 按动作键切换 AnimationTree 状态；没有动画树的对象（如敌人）沿用直接播放。
+func play_action(action: StringName) -> StringName:
+	var ref := ref_of(action)
+	if ref == "":
+		return &""
+	var playback := _animation_playback()
+	var state_machine_root: AnimationNodeStateMachine
+	if animation_tree != null:
+		state_machine_root = animation_tree.tree_root as AnimationNodeStateMachine
+	if playback == null or state_machine_root == null or not state_machine_root.has_node(action):
+		return _apply_anim_ref(ref)
+	if playback.get_current_node() != action:
+		playback.start(action, true)
+	var parts := split_anim_ref(ref)
+	return StringName(String(parts[1]))
+
+
 ## 播放「gN/actMM」引用：需要时换 sprite 数据源，并重置到首帧 + 按该段脚底锚点对齐
 func play_anim_ref(ref: String) -> StringName:
 	var parts := split_anim_ref(ref)
-	var set := set_of_group(int(parts[0]))
-	if set == null or set.sprite_frames == null:
+	var set1 := set_of_group(int(parts[0]))
+	if set1 == null or set1.sprite_frames == null:
+		return &""
+	return _apply_anim_ref(ref)
+
+
+func _apply_anim_ref(ref: String) -> StringName:
+	var parts := split_anim_ref(ref)
+	var set1 := set_of_group(int(parts[0]))
+	if set1 == null or set1.sprite_frames == null:
 		return &""
 	var anim := String(parts[1])
-	if sprite.sprite_frames != set.sprite_frames:
-		sprite.sprite_frames = set.sprite_frames
-	if active_set != set or sprite.animation != anim:
+	if sprite.sprite_frames != set1.sprite_frames:
+		sprite.sprite_frames = set1.sprite_frames
+	if active_set != set1 or sprite.animation != anim:
 		sprite.animation = anim
 		sprite.frame = 0
-	active_set = set
+	active_set = set1
 	sprite.centered = false
-	if set.acts.has(anim):
-		sprite.offset = -set.anchor_of(anim)
+	if set1.acts.has(anim):
+		sprite.offset = -set1.anchor_of(anim)
 	sprite.flip_h = face_dir < 0
+	sprite.play(anim)
 	return StringName(anim)
-
-
-## 播放动作键对应的动画段，返回实际段名
-func play_action(action: StringName) -> StringName:
-	return play_anim_ref(ref_of(action))
 
 
 ## 招式起手动画：优先 `MoveData.start_anim`，否则回落到动作键 `[ROMDATA]` doc/10 §8.11

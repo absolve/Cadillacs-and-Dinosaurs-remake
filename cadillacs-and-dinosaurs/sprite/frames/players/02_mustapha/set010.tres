@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="DinoAnimSet" format=3]
+[gd_resource type="Resource" script_class="DinoAnimSet" format=3 uid="uid://cxkwctw8gu36b"]
 
-[ext_resource type="Script" path="res://script/data/dino_anim_set.gd" id="1_b8y2h"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act00.png" id="2_rnw8q"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act01.png" id="3_a4gbg"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act02.png" id="4_5xeub"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act03.png" id="5_bwy3g"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act05.png" id="6_lgln6"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act06.png" id="7_i8gg3"]
-[ext_resource type="Texture2D" path="res://sprite/players/02_mustapha/set010/act08.png" id="8_s2cn3"]
+[ext_resource type="Script" uid="uid://bdubxig0mjglt" path="res://script/data/dino_anim_set.gd" id="1_b8y2h"]
+[ext_resource type="Texture2D" uid="uid://7ih8e3huebqx" path="res://sprite/players/02_mustapha/set010/act00.png" id="2_rnw8q"]
+[ext_resource type="Texture2D" uid="uid://dsyu3c8irs3ix" path="res://sprite/players/02_mustapha/set010/act01.png" id="3_a4gbg"]
+[ext_resource type="Texture2D" uid="uid://cg5tconjffluq" path="res://sprite/players/02_mustapha/set010/act02.png" id="4_5xeub"]
+[ext_resource type="Texture2D" uid="uid://c5q8u8jiw5rn8" path="res://sprite/players/02_mustapha/set010/act03.png" id="5_bwy3g"]
+[ext_resource type="Texture2D" uid="uid://d254yp3qq1tal" path="res://sprite/players/02_mustapha/set010/act05.png" id="6_lgln6"]
+[ext_resource type="Texture2D" uid="uid://b3orb3in5pqgp" path="res://sprite/players/02_mustapha/set010/act06.png" id="7_i8gg3"]
+[ext_resource type="Texture2D" uid="uid://cmn64x13xofiq" path="res://sprite/players/02_mustapha/set010/act08.png" id="8_s2cn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8ffm"]
 atlas = ExtResource("2_rnw8q")

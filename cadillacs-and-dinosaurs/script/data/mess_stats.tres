@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterStats" format=3]
+[gd_resource type="Resource" script_class="CharacterStats" format=3 uid="uid://fopq4cwlpkji"]
 
 [ext_resource type="Script" uid="uid://beprw6mt0e7xf" path="res://script/data/move_data.gd" id="1_3kk7n"]
 [ext_resource type="Script" uid="uid://cgobtkjmdkse6" path="res://script/data/character_stats.gd" id="2_tvran"]
@@ -61,5 +61,5 @@ hitbox_rect = Rect2(2, -64, 40, 48)
 script = ExtResource("2_tvran")
 rom_id = 3
 display_name = "Mess"
-special_damage = 23
 moves = Array[ExtResource("1_3kk7n")]([SubResource("Resource_s1atk"), SubResource("Resource_s2atk"), SubResource("Resource_s3atk"), SubResource("Resource_skick"), SubResource("Resource_sspec")])
+special_damage = 23

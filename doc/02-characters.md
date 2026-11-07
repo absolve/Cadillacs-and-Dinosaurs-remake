@@ -17,6 +17,26 @@
 > Flying Super Punch、Spinning Knuckle Bomb 都是 Mess 的招式）。
 > 因此 Mess 的定位描述属 `[推定]`。
 
+## 玩家动画结构
+
+四名玩家场景（Jack、Hannah、Mustapha、Mess）都继承
+`scene/actor/player/player.tscn`，并在各自场景中直接指定 `SpriteFrames`、
+`AnimationPlayer` 动画库和 `AnimationTree` 状态机。合并后的精灵动画名采用
+`gN_actNN`（例如 `g1_act11`）；动画片段设置 Sprite 的动画名、帧偏移并启动播放，
+脚本只将动作引用映射到角色专属状态名，不再运行时替换 `SpriteFrames` 或动画。
+四个角色分别使用 `player_jack.gd` 等脚本，允许独立调整状态命名和动作映射。
+动画资源由 `cadillacs-and-dinosaurs/tools/build_player_animations.py` 从各角色的
+`DinoAnimSet` 生成；更新素材后在项目目录运行
+`python tools/build_player_animations.py` 即可重建合并帧、动画库和状态机。
+暂不确定的动作可后续在对应角色的 `AnimationTree` / `AnimationPlayer` 资源中调整。
+四名玩家统一使用以下游戏动作名的小写语义动画：`stand`、`move`、`run`、`jump`、
+`combo`、`combo2`、`dash_attack`、`flying_kick`、`grab_attack`、`throw`、
+`rolling_elbow_smash`、`homing_kick`、`special_attack`、`team_move`。
+每名玩家的 `AnimationPlayer` / `AnimationTree` 只保留以上语义名称；已确认的名称使用对应
+角色帧段，`homing_kick`、`special_attack` 和 `team_move` 暂以待机画面占位。原始帧段只保留在
+`SpriteFrames` 作为素材来源，不再作为 AnimationPlayer 动画。玩家脚本会把现有动作引用映射到
+上述状态；补充素材时可替换占位动画，并更新生成工具中的映射。
+
 ## 角色定位对比
 
 原版游戏中每名角色的差异体现在三个维度：**力量（power）、速度（speed）、
